@@ -1,5 +1,128 @@
 ---
 
 ---
+<header class="header">
+    <nav>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <a href="index.html" class="logodesk"><img src="../img/logo.png" alt="logo" /></a>
+        <ul class="menu">
+            <li><a href="index.html">FORSIDE</a></li>
+            <li><a href="ommig.html">OM MIG</a></li>
+            <li><a href="projekter.html">PROJEKTER</a></li>
+        </ul>
+    </nav>
+    <div class="mobil-streger-container">
+        <div class="streg1"></div>
+        <div class="streg2"></div>
+    </div>
+</header>
 
-<img src="../img/logo.png" alt="logo" />
+
+
+
+
+
+<style>
+    /* ---------------------------- HEADER / BURGERMENU MOBIL VERSION---------------------------- */
+/* Header styling */
+.header {
+  background-color: var(--primary);
+  width: 100%;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: var(--primary);
+}
+/* Links styling */
+.header li a {
+  font-family: "josefin-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+/* Menu styling */
+.menu a:hover {
+  font-family: "josefin-sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #e34a6f;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+/* Menu icon styling */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: black;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #000000;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+/* funktion på de 3 streger til burgermenu */
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+</style>
