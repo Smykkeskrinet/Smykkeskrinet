@@ -3,23 +3,28 @@
 ---
 <header class="header">
     <nav>
+        <!-- Menu Button -->
         <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <a href="index.astro" class="logodesk"><img src="../img/logo.png" alt="logo" /></a>
+        <label class="menu-icon" for="menu-btn">
+            <span class="navicon"></span>
+            <!-- Ikoner flyttet til menu-icon sektionen -->
+            <div class="icons-container">
+                <a href="index.astro"><img src="../img/search.svg" alt="search" class="ikon" /></a>
+                <a href="index.astro"><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
+            </div>
+        </label>
+
+        <!-- Logo -->
+        <a href="index.astro"><img src="../img/logo.png" alt="logo" class="logodesk" /></a>
+
+        <!-- Menu Links -->
         <ul class="menu">
             <li><a href="index.astro">SMYKKER</a></li>
             <li><a href="tjenester.astro">TJENESTER</a></li>
             <li><a href="om-os.astro">OM OS</a></li>
         </ul>
     </nav>
-    <div class="mobil-streger-container">
-        <div class="streg1"></div>
-        <div class="streg2"></div>
-    </div>
 </header>
-
-
-
 
 
 
@@ -31,8 +36,31 @@
   width: 100%;
 }
 
+/* Wrapper for ikoner og burgermenu */
+.icons-container {
+    display: flex; /* Arrangerer elementerne på en række */
+    align-items: center; /* Centrerer vertikalt */
+    justify-content: flex-end; /* Placerer dem til højre */
+    gap: 15px; /* Afstand mellem elementerne */
+    padding-right: 20px; /* Juster om nødvendigt */
+}
+
+/* Ikon styling */
+.ikon {
+    max-width: 24px; /* Juster størrelsen af lup og shoppingbag */
+    cursor: pointer;
+}
+
+/* Tilpas burger-menu position */
+.header .menu-icon {
+    margin-left: 10px; /* Juster afstand fra ikonerne */
+}
+
+
 .logodesk{
-    max-width: 50%;
+   max-width: 15%;
+   padding-left: 10px;
+   padding-top: 10px;
 }
 
 .header ul {
