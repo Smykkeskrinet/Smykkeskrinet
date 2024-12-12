@@ -2,81 +2,82 @@
 
 ---
 
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+</head>
 <section class="herosection_background">
-    <h1>SMYKKESKRINET</h1>
-    <div class= "center-container">
-        <a href="">
-        <img src="../img/shopnu_normal.svg" alt="hero" class="shopnu_knap"/>
+  <h1>SMYKKESKRINET</h1>
+  <div class="center-container">
+    <a href="">
+      <img src="../img/shopnu_normal.svg" alt="hero" class="shopnu_knap" />
     </a>
-    </div>
-    </section>
-    
-    <style>
-    
-    .herosection_background{
-        background-image: url("../img/Hero1.webp");
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-    }
-    
-    h1{
-        font-size: 42px;
-        color: #1B72D0;
-        padding-top: 5rem;
-        text-align: center;
-    }
-    
-    .center-container {
+  </div>
+</section>
+
+<style>
+  .herosection_background {
+    background-image: url(../img/Hero2.webp);
+    z-index: 1; /* Sørg for, at overskriften er foran billedet */
+    background-size: contain;
+  }
+
+  h1 {
+    font-size: 42px;
+    color: #1b72d0;
+    padding-top: 5rem;
+    font-family: orbitron;
+    text-align: center;
+  }
+
+  /*Så knappen sidder rigtigt */
+  .center-container {
     display: flex; /* Brug flexbox til centrering */
     justify-content: center;
     align-items: center;
     height: 100%; /* Sørg for, at containeren fylder hele skærmen */
-}
+  }
 
-    .shopnu_knap{
-        justify-content: center;
-        display: flex;
-        width: 90%;
-        padding: 70px 30px;
-   
+  .shopnu_knap {
+    justify-content: center;
+    display: flex;
+    width: 90%;
+    padding: 80px 30px;
     cursor: pointer;
-        transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  .shopnu_knap:hover {
+    content: url("../img/Shopnu_hover.svg");
+  }
+
+  /*DESKTOP*/
+  @media (min-width: 700px) {
+    h1 {
+      font-size: 100px;
+      color: #1b72d0;
+      padding-top: 5rem;
+      text-align: center;
     }
-    
+
+    .herosection_background {
+      background-image: url("../img/Hero1.webp");
+      background-image: url("../img/Hero2.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+    }
+
+    .shopnu_knap {
+      padding: 200px 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
     .shopnu_knap:hover {
-        content: url("../img/Shopnu_hover.svg"); 
-        
+      content: url("../img/Shopnu_hover.svg");
     }
-
-    /*DESKTOP*/
-@media (min-width: 700px) {
-
-    h1{
-        font-size: 100px;
-        color: #1B72D0;
-        padding-top: 5rem;
-        text-align: center;
-    }
-
-    .herosection_background{
-        background-image: url("../img/Hero1.webp");
-        background-size:contain;
-        width: 100%;
-        height: 100%;
-    }
-
-    .shopnu_knap{
-        padding: 200px 20px;
-
-    cursor: pointer;
-        transition: all 0.2s ease;
-    }
-    
-    .shopnu_knap:hover {
-        content: url("../img/Shopnu_hover.svg"); 
-        
-    }
-}
-    
-    </style>
+  }
+</style>
