@@ -1,0 +1,12 @@
+---
+const endpoint="https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker" 
+const options={
+    method: "GET",
+    headers: {
+        apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6YXFmd2dicnV2bGx2ZGxwYWJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMzOTMyNjgsImV4cCI6MjA0ODk2OTI2OH0.RBngwuyg62kGxohOAq847cclytJ9kdChHAHwghgCW0g"
+    }
+}
+const data = await fetch(endpoint,options).then(res=>res.json())
+console.log(data)
+---
+<h1>Produktliste</h1>
