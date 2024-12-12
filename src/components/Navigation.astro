@@ -22,146 +22,203 @@
             <li><a href="tjenester.astro">TJENESTER</a></li>
             <li><a href="om-os.astro">OM OS</a></li>
         </ul>
+
+</ul>
+
     </nav>
 </header>
 
 
 
 <style>
-    /* ---------------------------- HEADER / BURGERMENU MOBIL VERSION---------------------------- */
-    /* Header styling */
-    .header {
-        background-color: var(--primary);
-        width: 100%;
-        z-index: 2;
-    }
+  * ---------------------------- HEADER / BURGERMENU MOBIL VERSION---------------------------- */
+/* Header styling */
+.header {
+  background-color: var(--primary);
+  width: 100%;
+}
 
-    /* Wrapper for ikoner og burgermenu */
-    .icons-container {
-        display: flex; /* Arrangerer elementerne på en række */
-        align-items: center; /* Centrerer vertikalt */
-        justify-content: flex-end; /* Placerer dem til højre */
-        gap: 15px; /* Afstand mellem elementerne */
-        padding-right: 20px; /* Juster om nødvendigt */
-    }
+.logodesk{
+    max-width: 13%;
+  height: auto;
+  padding-left: 10px;
+  padding-top: 10px;
+}
 
-    /* Ikon styling */
-    .ikon {
-        max-width: 24px; /* Juster størrelsen af lup og shoppingbag */
-        cursor: pointer;
-        margin: 0;
-        padding: 0; /* Fjernet ekstra padding */
-    }
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: var(--primary);
+}
+/* Links styling */
+.header li a {
+  font-family: "josefin-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+/* Menu styling */
+.menu a:hover {
+  font-family: "josefin-sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #e34a6f;
+}
 
-    /* Tilpas burger-menu position */
-    .header .menu-icon {
-        display: flex; /* Brug flexbox for at arrangere burgermenu og ikoner */
-        align-items: center; /* Vertikalt centrer */
-        justify-content: flex-end; /* Placer dem til højre */
-        padding-right: 20px;
-        gap: 15px; /* Afstand mellem burgermenu og ikoner */
-    }
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+/* Menu icon styling */
 
-    .logodesk {
-        max-width: 15%;
-        padding-left: 10px;
-        padding-top: 10px;
-        justify-content: flex-end; /* Placer dem til højre */
-    }
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
 
-    .header ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        overflow: hidden;
-        background-color: var(--primary);
-    }
+.header .menu-icon .navicon {
+  background: black;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
 
-    /* Links styling */
-    .header li a {
-        font-family: "josefin-sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #000000;
-        display: block;
-        padding: 20px 20px;
-        text-decoration: none;
-    }
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #000000;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
 
-    /* Menu styling */
-    .menu a:hover {
-        font-family: "josefin-sans", sans-serif;
-        font-weight: 600;
-        font-style: normal;
-        color: #e34a6f;
-    }
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
 
-    .header .menu {
-        clear: both;
-        max-height: 0;
-        transition: max-height 0.2s ease-out;
-    }
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
 
-    /* Menu icon styling */
-    .header .menu-icon {
-        cursor: pointer;
-        float: right;
-        padding: 28px 20px;
-        position: relative;
-        user-select: none;
-    }
+.header .menu-btn {
+  display: none;
+}
 
-    .header .menu-icon .navicon {
-        background: black;
-        display: block;
-        height: 2px;
-        position: relative;
-        transition: background 0.2s ease-out;
-        width: 18px;
-    }
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+/* funktion på de 3 streger til burgermenu */
 
-    .header .menu-icon .navicon:before,
-    .header .menu-icon .navicon:after {
-        background: #000000;
-        content: "";
-        display: block;
-        height: 100%;
-        position: absolute;
-        transition: all 0.2s ease-out;
-        width: 100%;
-    }
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
 
-    .header .menu-icon .navicon:before {
-        top: 5px;
-    }
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
 
-    .header .menu-icon .navicon:after {
-        top: -5px;
-    }
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
 
-    .header .menu-btn {
-        display: none;
-    }
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
 
-    .header .menu-btn:checked ~ .menu {
-        max-height: 240px;
-    }
+/* ---------------------------- MENU DESKTOP---------------------------- */
 
-    /* Funktion på de 3 streger til burgermenu */
-    .header .menu-btn:checked ~ .menu-icon .navicon {
-        background: transparent;
-    }
+@media (min-width: 768px) {
+  header {
+    width: 100%;
+    background-color: var(--primary);
+    padding: 1.5rem;
+  }
 
-    .header .menu-btn:checked ~ .menu-icon .navicon:before {
-        transform: rotate(-45deg);
-    }
+  .logodesk{
+    max-width: 13%;
+  height: auto;
+  padding-left: 10px;
+  padding-top: 10px;
+}
 
-    .header .menu-btn:checked ~ .menu-icon .navicon:after {
-        transform: rotate(45deg);
-    }
 
-    .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-    .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-        top: 0;
-    }
+  #logo_mobil {
+    display: none;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav img {
+    max-width: 40%;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+  }
+
+  .menu a {
+    max-width: fit-content;
+    transition: all 0.3s ease 0s;
+    color: #000000;
+  }
+
+  .menu a:hover {
+    color: var(--accent);
+    font-family: "josefin-sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #e34a6f;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-family: "josefin-sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .streg1 {
+    border: 2px solid var(--accent);
+    margin-top: 1rem;
+  }
+
+  .streg2 {
+    border: 1px solid var(--accent);
+    margin-top: 0.3rem;
+  }
+
+  .header .menu {
+    clear: none;
+    max-height: none;
+  }
+
+  .header .menu-icon {
+    display: none;
+  }
+}
 </style>
