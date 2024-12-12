@@ -1,0 +1,53 @@
+---
+const { data, imgPath, cardName, cardText, variant, cardClass, cardTextOne, cardTextTwo, cardTextThree } = Astro.props;
+import Button from "../components/Button.astro";
+console.log(data);
+
+
+---
+<article>
+ <div data-variant="cardClass">
+<img src={imgPath} alt="Kunstnerbild" height="460" width="430"/>
+<h3>
+   {}
+ </h3>
+ <p>{cardName}</p>
+ <br>
+ <Button variant={variant}>Read more</Button>
+</div>
+</article>
+
+
+<style>
+
+[data-variant="white"] {
+color: rgb(0, 0, 0);
+width: 390px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.4rem;
+font-weight: 200;
+background-color: white;
+   }
+
+   [data-variant="black"] {
+color: rgb(255, 255, 255);
+width: 390px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.4rem;
+font-weight: 200;
+background-color: black;
+   }
+   
+   li {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 768px) {
+    li {
+      max-width: 200px;
+    }
+}
+
+
+   
+</style>

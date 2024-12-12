@@ -2,6 +2,7 @@
 import "../styles/style.css";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
 
 const endpoint="https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker" 
 const options={
@@ -23,6 +24,7 @@ console.log(data)
     </header>
 <main>
     <h1>Produktliste</h1>
+    <Card />
 </main>
     <footer>
         <Footer />
