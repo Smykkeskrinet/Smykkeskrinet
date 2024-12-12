@@ -11,28 +11,29 @@
 <div class="herosection">
   <h1>SMYKKESKRINET</h1>
 
-  <div class="hero_mobile">
+  <div class="hero_imgs">
     <div class="img-hero1">
       <a href="">
         <img src="../img/Hero1.webp" alt="hero1" />
       </a>
     </div>
+
+    <div class="img-hero2">
+      <a href="">
+        <img src="../img/Hero2.webp" alt="hero2" />
+      </a>
+    </div>
   </div>
 
-  <div class="img-hero2">
-    <a href="">
-      <img src="../img/Hero2.webp" alt="hero2" />
-    </a>
-  </div>
   <img src="../img/shopnu_normal.svg" alt="hero" class="shopnu_knap" />
 </div>
 
 <style>
-  .hero_mobile {
+  /*Fjerner det ene billede i mobilversion */
+  .img-hero1 {
     display: none;
   }
   .herosection {
-    position: relative;
     display: flex;
     align-items: center; /* Centrerer lodret */
     justify-content: center; /* Centrerer vandret */
@@ -51,7 +52,7 @@
 
   .shopnu_knap {
     width: 30%;
-    top: 50%;
+    top: 40%;
     position: absolute;
   }
 
@@ -64,33 +65,28 @@
 
   /*DESKTOP*/
   @media (min-width: 700px) {
-    .herosection {
-      position: relative;
+    /*viser begger billeder*/
+    .img-hero1,
+    .img-hero2 {
+      display: block;
+      flex: 1; /* Sørg for, at begge billeder deler pladsen ligeligt */
+      margin-top: 6%;
+    }
+
+    .hero_imgs {
       display: flex;
-      align-items: center; /* Centrerer lodret */
-      justify-content: center; /* Centrerer vandret */
+      width: 100%;
     }
 
     .herosection h1 {
-      position: absolute; /* Placeres over billederne */
-      top: 20%;
-      color: #1b72d0;
-      font-family: orbitron;
-      text-align: center;
-      font-size: 7rem;
+      font-size: 6rem; /* Større skrift */
+      top: 15%; /* Justerer placering */
+      margin-top: 8%;
     }
 
     .shopnu_knap {
-      width: 20%;
-      top: 50%;
-      position: absolute;
-    }
-
-    .img-hero1 img,
-    .img-hero2 img {
-      width: 100%; /* Sørg for, at billederne fylder deres grid-celler */
-      height: auto;
-      object-fit: cover; /* Tilpas billedet uden at forvrænge det */
+      width: 190px;
+      top: 60%;
     }
   }
 </style>
