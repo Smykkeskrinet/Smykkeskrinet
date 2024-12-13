@@ -1,21 +1,40 @@
 ---
-import "../styles/style.css";
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
+import Navigation from ".../components/Navigation.astro";
+
+//https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker
+export async function getStaticPaths() {
+  const url = "https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker";
+  const options = {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6YXFmd2dicnV2bGx2ZGxwYWJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMzOTMyNjgsImV4cCI6MjA0ODk2OTI2OH0.RBngwuyg62kGxohOAq847cclytJ9kdChHAHwghgCW0g",
+    },
+  };
+
+  const data = await fetch(url, options).then((res) => res.json());
+
+  return data.map((produkt) => ({
+    params: { id: produkt.id },
+    props: { produkt }, // send al data med som props
+  }));
+}
+const { produkt } = Astro.props;
 ---
 
-<body>
-    <header>
-    <!-- <Striber /> -->
-  <div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
     <Navigation />
-  </div>
-    </header>
-<main>
-    <h1>Single view</h1>
-
-</main>
-    <footer>
-        <Footer />
-    </footer>
+    <h1>{produkt.navn}</h1>
+    <h3>{produkt.pris}</h3>
+    <p>{produkt.beskrivelse}</p>
+    <h3>{produkt.brand}</h3>
+    <main></main>
   </body>
+</html>
+
+<style></style>
