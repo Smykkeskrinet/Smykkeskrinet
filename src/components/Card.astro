@@ -20,12 +20,11 @@ import Button from "../components/Button.astro";
 <style>
 
 article {
-  width: 300px; /* Bredden på kortet */
-  border: 1px solid #ccc; /* Tynder grænse */
-  
+  /* width: 300px;  */
+  margin: 2rem;
+  border: 1px solid #3C3636; /* Tynder grænse */
   overflow: hidden; /* Skjuler overløb */
   background-color: #f9f9f9; /* Baggrundsfarve */
-  
   text-align: center; /* Centrerer tekst */
   font-family: Arial, sans-serif; /* Standard skrifttype */
 }
@@ -41,18 +40,22 @@ article div {
 
 article h3 {
   font-size: 1.2rem;
-  margin: 8px 0; /* Tilføjer afstand over og under */
+ text-align: start;
   font-weight: bold; /* Fremhæver navnet */
+  font-family: orbitron;
+  color: #3C3636;
 }
 
 article p {
-  margin: 4px 0; /* Lidt afstand mellem tekst */
-  font-size: 1rem; /* Standard tekststørrelse */
+  text-align: start;
+  color: #3C3636;
+  font-family: poppins;
 }
 
 article p:last-of-type {
   color: #007bff; /* Blå tekstfarve til pris */
   font-weight: bold; /* Fremhævet pris */
+  font-family: orbitron;
 }
 
 
