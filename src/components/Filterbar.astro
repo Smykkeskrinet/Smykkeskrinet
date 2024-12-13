@@ -1,0 +1,90 @@
+---
+<script>
+    // Brug en lokal variabel til at styre menuens synlighed
+    let isOpen = false;
+  
+    const toggleMenu = () => {
+      isOpen = !isOpen;
+    };
+  
+    const closeMenu = (event) => {
+      if (!event.target.closest('.sort-dropdown')) {
+        isOpen = false;
+      }
+    };
+  
+    // Luk dropdown, hvis der klikkes udenfor
+    onMount(() => {
+      document.addEventListener('click', closeMenu);
+    });
+  
+    onCleanup(() => {
+      document.removeEventListener('click', closeMenu);
+    });
+  </script>
+---
+
+
+  
+  <style>
+    .sort-dropdown {
+      position: relative;
+    }
+  
+    .sort-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    .dropdown-menu {
+      display: none; /* Skjult som standard */
+      position: absolute;
+      top: 100%; /* Placeret lige under knappen */
+      right: 0;
+      background-color: #333;
+      color: white;
+      list-style: none;
+      padding: 8px 0;
+      margin: 0;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+    }
+  
+    .dropdown-menu.active {
+      display: block; /* Vis menuen */
+    }
+  
+    .dropdown-menu li {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  
+    .dropdown-menu li:hover {
+      background-color: #444; /* Fremhæv ved hover */
+    }
+  </style>
+  
+  <div class="sort-dropdown">
+    <button class="sort-button" on:click={toggleMenu}>
+      Sorter
+      <span class="sort-icon">{isOpen ? '▲' : '▼'}</span>
+    </button>
+    <ul class={`dropdown-menu ${isOpen ? 'active' : ''}`}>
+      <li>Fremhævet</li>
+      <li>Bestsellere</li>
+      <li>Alfabetisk, A–Å</li>
+      <li>Alfabetisk, Å–A</li>
+      <li>Pris, lav til høj</li>
+      <li>Pris, høj til lav</li>
+      <li>Dato, ældre til nyere</li>
+      <li>Dato, nyere til ældre</li>
+    </ul>
+  </div>
+  
