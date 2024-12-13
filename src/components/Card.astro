@@ -1,5 +1,6 @@
 ---
 const { navn, brand, pris, billede } = Astro.props;
+import Button from "../components/Button.astro";
 // console.log(data);
 ---
 
@@ -13,6 +14,7 @@ const { navn, brand, pris, billede } = Astro.props;
     <p>{pris}</p>
     <br />
   </div>
+  <Button label="Se mere"/>
 </article>
 
 <style>

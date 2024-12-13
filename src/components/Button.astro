@@ -1,12 +1,27 @@
 ---
-const { variant, link } = Astro.props;
+const { href, label } = Astro.props;
 ---
 
-<a href={link} data-variant={variant}>
-  <slot />
+<a href={href} class="se-mere">
+  {label}
 </a>
 
 <style>
-  
-     
-  </style>
+  .se-mere {
+    display: block; /* Gør knappen til en blok */
+    width: 100%; /* Fylder hele bredden */
+    padding: 12px 0; /* Indre afstand */
+    background-color: #fff; /* Hvid baggrund */
+    color: #000; /* Sort tekstfarve */
+    text-decoration: none; /* Fjerner understregning */
+    border-top: 1px solid #ccc; /* Skillelinje over knappen */
+    font-weight: bold; /* Fremhævet tekst */
+    text-align: center; /* Centrerer teksten */
+    transition: background-color 0.3s, color 0.3s; /* Animation ved hover */
+  }
+
+  .se-mere:hover {
+    background-color: #007bff; /* Blå baggrund ved hover */
+    color: #fff; /* Hvid tekst ved hover */
+  }
+</style>
