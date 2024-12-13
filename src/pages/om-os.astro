@@ -4,12 +4,19 @@ import Footer from "../components/Footer.astro";
 import Striber from "../components/Striber.astro";
 import "../styles/style.css";
 ---
+
+
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
     <title>Om os</title>
   </head>
   <body>
@@ -21,14 +28,10 @@ import "../styles/style.css";
     </header>
 
 
-    <div class="rightbox">
-    <img src="../img/personale.webp" alt="hero" class="personale"/>
-</div>
-
-
 <div class="leftbox">
-<h2>om os</h2>
-<p>Sussie Nielsen er indehaver af Smykkeskrinet, som åbnede på Rønnes gågade i 2012.
+  <img src="../img/personale.webp" alt="hero" class="personale"/>
+<h2 class="h2_blue">OM OS</h2>
+<p class="p_grey">Sussie Nielsen er indehaver af Smykkeskrinet, som åbnede på Rønnes gågade i 2012.
 
     Efter at Sussie kom i lære hos en Guldsmedbutik i 1986, var hun helt solgt, selvom perler og ædelsten altid har ligget i hendes DNA. 
     
@@ -39,32 +42,30 @@ import "../styles/style.css";
     </p>
 </div>
 
-<div class="rightbox">
-    <img src="../img/sussie.webp" alt="hero" class="sussie"/>
-</div>
+   
+
 
 <div class="leftbox1">
-    <h3>“FRA VUGGE TIL GRAV”</h3>
-    <h4>Hos os her i smykkeskrinet er kunden altid nummer 1, og vi elsker at hjælpe vores kunder med at få løst i problem.
+  <img src="../img/sussie.webp" alt="hero" class="sussie"/>
+    <h2 class="h2_pink">“FRA VUGGE TIL GRAV”</h2>
+    <p class="p_pink">Hos os her i smykkeskrinet er kunden altid nummer 1, og vi elsker at hjælpe vores kunder med at få løst i problem.
 
         Vi bestræber os efter at have alt hvad kunden har brug for uanset
         alder, køn og livssituation. Vi har alt fra dåbsgaver til forlovelsesringe til krondiamantbryllupsgaver til begravelsesdekorationer. Vi tilbyder også at få skudt huller i ørene, og få indgraveret personlige hilser på ønsket smykke.
          
         Vi sælger kun ægte smykker her i Smykkeskrinet. Alt andet kan vi ikke stå inde for! 
-    </h4>
+    </p>
     </div>
 
-<div class="rightbox">
-    <img src="../img/butik.webp" alt="hero" class="sussie"/>
-</div>
 
 <div class="leftbox">
-    <h2>FIND OS HER</h2>
+  <img src="../img/butik.webp" alt="hero" class="sussie"/>
+    <h2 class="h2_grey">FIND OS HER</h2>
     
     <div><img src="../img/pin.png" alt="pin">
     </div>
-    <div><p>Find os på St. Torvegade 2 i Rønne, hvor vi altid vil stå klar til at hjælpe dig!</p></div>
-    <p>Hold dig opdateret på Smykkeskrinets sociale medier</p>
+    <div><p class="p_grey">Find os på St. Torvegade 2 i Rønne, hvor vi altid vil stå klar til at hjælpe dig!</p></div>
+    <p class="p_grey">Hold dig opdateret på Smykkeskrinets sociale medier</p>
 
     <div class="ikoner">
         <img src="../img/facebook_pink.svg" alt="facebook" >
@@ -78,11 +79,36 @@ import "../styles/style.css";
   </html>
 
   <style>
-h2{color: #1B72D0;}
-p{color: #1B72D0;}
-h3 {color: #F9F2F2;}
-h4{color: #F9F2F2;}
+.h2_blue{
+  color: #1B72D0;
+  font-size: 35px;
+font-family: orbitron;
+}
+
+.p_grey{
+  color: #3C3636;
+  font-family: poppins; 
+font-size: 14px;}
+
+.h2_grey{color: #3C3636;
+  font-size: 35px;
+font-family: orbitron;}
+
+.h2_pink  {color: #F9F2F2;
+  font-size: 35px;
+font-family: orbitron;}
+
+.p_pink {color: #F9F2F2;
+  font-family: poppins; 
+font-size: 14px;
+}
+
+.leftbox{
+  background-color:#F9F2F2;
+}
 
 .leftbox1{background-color: #3C3636;}
+
+.img{width: 100%;}
 
   </style>
