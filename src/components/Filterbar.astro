@@ -1,5 +1,5 @@
 ---
-
+import "../js/js.js";
 ---
 
 <div class="action-bar">
@@ -25,4 +25,53 @@
       </ul>
     </div>
   </div>
+
+  <style>
+    /* Dropdown-knap og container */
+.sort-dropdown {
+  position: relative;
+}
+
+.sort-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Dropdown-menu */
+.dropdown-menu {
+  display: none; /* Skjult som standard */
+  position: absolute;
+  top: 100%; /* Placeret lige under knappen */
+  right: 0; /* Justeret til højre */
+  background-color: #333; /* Mørk baggrund */
+  color: white;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  width: 200px; /* Fast bredde */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Let skygge */
+  z-index: 100; /* Overlap på andre elementer */
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #444; /* Fremhæv ved hover */
+}
+
+/* Når menuen er synlig */
+.dropdown-menu.active {
+  display: block;
+}
+
+  </style>
   
