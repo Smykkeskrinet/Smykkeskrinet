@@ -1,11 +1,11 @@
 ---
-const { navn, brand, pris } = Astro.props;
+const { navn, brand, pris, billede } = Astro.props;
 // console.log(data);
 ---
 
 <article>
-  <div data-variant="cardClass">
-    <!-- <img src={imgPath} alt="Kunstnerbild" height="460" width="430" /> -->
+  <div>
+    <img src={billede} alt="billede" height="460" width="430" />
     <h3>
       {navn}
     </h3>
@@ -16,27 +16,44 @@ const { navn, brand, pris } = Astro.props;
 </article>
 
 <style>
-  .h3 {
-    color: rgb(0, 0, 0);
-    width: 390px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 200;
-    background-color: white;
-  }
 
-  [data-variant="black"] {
-    color: rgb(255, 255, 255);
-    width: 390px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 200;
-    background-color: black;
-  }
+article {
+  width: 300px; /* Bredden på kortet */
+  border: 1px solid #ccc; /* Tynder grænse */
+  
+  overflow: hidden; /* Skjuler overløb */
+  background-color: #f9f9f9; /* Baggrundsfarve */
+  
+  text-align: center; /* Centrerer tekst */
+  font-family: Arial, sans-serif; /* Standard skrifttype */
+}
 
-  li {
-    list-style-type: none;
-  }
+article img {
+  width: 100%; /* Billede fylder hele bredden */
+  height: auto; /* Bevarer billedets proportioner */
+}
+
+article div {
+  padding: 16px; /* Indrykning indenfor boksen */
+}
+
+article h3 {
+  font-size: 1.2rem;
+  margin: 8px 0; /* Tilføjer afstand over og under */
+  font-weight: bold; /* Fremhæver navnet */
+}
+
+article p {
+  margin: 4px 0; /* Lidt afstand mellem tekst */
+  font-size: 1rem; /* Standard tekststørrelse */
+}
+
+article p:last-of-type {
+  color: #007bff; /* Blå tekstfarve til pris */
+  font-weight: bold; /* Fremhævet pris */
+}
+
+
 
   @media screen and (max-width: 768px) {
     li {
