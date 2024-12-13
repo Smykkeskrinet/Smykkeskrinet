@@ -9,7 +9,10 @@
 </head>
 
 <div class="herosection">
-  <h1>SMYKKESKRINET</h1>
+  <div class="hero_content">
+    <h1>SMYKKESKRINET</h1>
+    <img src="../img/shopnu_normal.svg" alt="hero" class="shopnu_knap" />
+  </div>
 
   <div class="hero_imgs">
     <div class="img-hero1">
@@ -24,8 +27,6 @@
       </a>
     </div>
   </div>
-
-  <img src="../img/shopnu_normal.svg" alt="hero" class="shopnu_knap" />
 </div>
 
 <style>
@@ -35,25 +36,33 @@
   }
   .herosection {
     display: flex;
-    align-items: center; /* Centrerer lodret */
-    justify-content: center; /* Centrerer vandret */
+    flex-direction: column; /* Stack elementer lodret som standard */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero_content {
+    position: relative;
+    z-index: 1; /* Sørger for, at tekst og knap er oven på billederne */
+    text-align: center;
   }
 
   .herosection h1 {
-    position: absolute; /* Placeres over billederne */
-    top: 25%;
     color: #1b72d0;
     font-family: orbitron;
-    text-align: center;
     font-size: 2.6rem;
-    max-width: 100vw; /* Maksimum bredde er skærmbredden */
-    overflow: hidden; /* Skjul indhold, der går udenfor sektionen */
+    margin: 0;
   }
 
   .shopnu_knap {
     width: 30%;
-    top: 40%;
-    position: absolute;
+    margin-top: 10%;
+  }
+
+  .hero_imgs {
+    display: flex;
+    flex-direction: column; /* Stak billederne lodret på mobil */
+    width: 100%;
   }
 
   .img-hero1 img,
