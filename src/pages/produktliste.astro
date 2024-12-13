@@ -30,7 +30,15 @@ const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
   </head>
   <body>
     <Navigation />
+    <section class="grid2">
+      <div>
     <h1>EARRINGS</h1>
+    <p>Se vores udvalg af øreringe nedenunder </p>
+  </div>
+    <div>
+      <img src="../img/koral2.webp" alt="hero" />
+    </div>
+  </section>
     <main>
       {
         data.map((product) => {
@@ -46,6 +54,23 @@ const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
 </html>
 
 <style>
+
+  
+.grid2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F9F2F2;; /* Baggrundsfarve */
+  padding-left: 3rem;
+}
+
+img{
+  width: 100%;
+}
+
+p{
+  font-family: poppins;
+}
+
  main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
@@ -58,13 +83,20 @@ const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
     grid-template-columns: 1fr; /* En enkelt kolonne på mindre skærme */
     padding: 16px;
   }
+
+  .grid2{
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #F9F2F2;; /* Baggrundsfarve */
+  padding-left: 0rem;
+}
 }
 
 h1 {
   font-family: Orbitron, sans-serif;
   color: #1b72d0;
   font-size: 50px;
-  margin: 1rem;
+
   
 }
 
