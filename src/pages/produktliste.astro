@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Card from "../components/Card.astro";
 import "../pages/singleview.astro";
+import "../styles/style.css";
 
 const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker", {
   method: "GET",
@@ -11,6 +12,12 @@ const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
   },
 }).then((res) => res.json());
 ---
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+</head>
 
 <html lang="en">
   <head>
@@ -22,7 +29,25 @@ const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
   </head>
   <body>
     <Navigation />
-    <h1>PRODUKTLISTE</h1>
-    <main></main>
+    <h1>EARRINGS</h1>
+    <main>
+      {
+        data.map((product) => {
+          return <Card {...product} />;
+        })
+      }
+      <p>test</p>
+    </main>
   </body>
+  <footer>
+    <Footer />
+  </footer>
 </html>
+
+<style>
+  h1 {
+    font-family: orbitron;
+    color: #1b72d0;
+    font-size: 5rem;
+  }
+</style>
