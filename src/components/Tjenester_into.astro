@@ -31,9 +31,61 @@
 </div>
 </section>
   </section>
+  <section class="book">
+    <div> 
+      <h1>BOOK DIN TID HER</h1>
+      <img src="../img/bookingkalender.svg" alt="logo" class="logodesk" /></div>
+      <div class="ledige_tider">
+        <h2>Ledige tider</h2>
+        <h3 class="tid_titel">MORGEN</h3>
+        <a class="tid" href="">10:00</a>
+       <a class="tid" href="">10:30</a>
+        <h3 class="tid_titel">MIDDAG</h3>
+        <a class="tid" href="">11:00</a>
+        <a class="tid" href="">11:30</a>
+        <a class="tid" href="">13:30</a>
+        <a class="tid" href="">14:30</a>
+        <h3 class="tid_titel">EFTERMIDDAG</h3>
+        <a class="tid" href="">15:00</a>
+        <a class="tid" href="">15:30</a>
+        <a class="tid" href="">16:00</a>
+        <a class="tid" href="">16:30</a>
+      </div>
+  </section>
   
   <style>
-    .livesalg {
+
+.book{
+  background-color: #3c3636;
+  padding: 1rem;
+}
+
+.tid_titel{
+  color: #f9f2f2;
+  margin-top: 2rem;
+}
+
+.tid{
+  font-size: 20px;
+  font-family: orbitron;
+  background-color: #3c3636;
+  color: #f9f2f2;
+  padding: 5px;
+  border: 1px solid #f9f2f2; /* 2px solid black border */
+  text-decoration: none;
+}
+
+.tid :hover{
+  font-size: 20px;
+  font-family: orbitron;
+  background-color: #f9f2f2;
+  color: #3c3636;
+  padding: 5px;
+  border: 1px solid #f9f2f2; /* 2px solid black border */
+  text-decoration: none;
+}
+
+.livesalg {
       background-color: #f9f2f2;
       margin-top: 1rem;
      padding-bottom: 1rem;
@@ -49,8 +101,18 @@
       font-size: 40px;
       text-align: center;
       padding-top: 2rem;
+      padding-bottom: 2rem;
       font-family: orbitron;
       color: #1b72d0;
+    
+    }
+
+
+    h2 {
+      font-size: 30px;
+      padding-top: 2rem;
+      font-family: orbitron;
+      color: #f9f2f2;
     
     }
 
@@ -81,6 +143,12 @@
   
     @media (min-width: 700px) {
       
+      .book{
+  background-color: #3c3636;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .grid3{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -93,6 +161,31 @@
      margin-bottom: 3rem;
      
     }
+
+.ledige_tider{
+  margin-left: 3rem;
+  margin-top: 3.5rem;
+}
+
+.tid{
+  font-size: 20px;
+  font-family: orbitron;
+  background-color: #3c3636;
+  color: #f9f2f2;
+  padding: 5px;
+  border: 1px solid #f9f2f2; /* 2px solid black border */
+  text-decoration: none;
+}
+
+.tid :hover{
+  font-size: 20px;
+  font-family: orbitron;
+  background-color: #f9f2f2;
+  color: #3c3636;
+  padding: 5px;
+  border: 1px solid #f9f2f2; /* 2px solid black border */
+  text-decoration: none;
+}
 
     .text{
       padding: 2rem;
