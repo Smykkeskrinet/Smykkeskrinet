@@ -8,316 +8,304 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
 </head>
 
-
 <header class="header">
-    <nav>
-        <!-- Logo -->
-        <a href="index"><img src="../img/logo.png" alt="logo" class="logodesk" /></a>
+  <nav>
+    <!-- Logo -->
+    <a href="index"><img src="../img/logo.png" alt="logo" class="logodesk" /></a>
 
-        
-        <!-- Menu Button -->
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        
-        <!-- Ikoner -->
-        <div class="menu">
-            <a href="index"><img src="../img/search.svg" alt="search" class="ikon" /></a>
-            <a href="index"><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
-        </div>
+    <!-- Menu Button -->
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
-      
-        <!-- Menu Links -->
-        <ul class="menu">
-            <li><a href="produktliste">SMYKKER</a></li>
-              <li><a href="tjenester">TJENESTER</a></li>
-              <li><a href="om-os">OM OS</a></li>
+    <!-- Ikoner -->
+    <div class="menu">
+      <a href="index"><img src="../img/search.svg" alt="search" class="ikon" /></a>
+      <a href="index"><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
+    </div>
+
+    <!-- Menu Links -->
+    <ul class="menu">
+      <li><a href="produktliste">SMYKKER</a></li>
+      <li><a href="tjenester">TJENESTER</a></li>
+      <li><a href="om-os">OM OS</a></li>
+    </ul>
+
+    <ul class="menu2">
+      <li class="dropdown">
+        <a href="produktliste">SMYKKER</a>
+        <ul class="dropdown-menu">
+          <li><a href="halskaeder">Halskæder</a></li>
+          <li><a href="ringe">Ringe</a></li>
+          <li><a href="armbaand">Armbånd</a></li>
         </ul>
+      </li>
+      <li><a href="tjenester">TJENESTER</a></li>
+      <li><a href="om-os">OM OS</a></li>
+    </ul>
 
-        <ul class="menu2">
-          <li class="dropdown">
-            <a href="produktliste">SMYKKER</a>
-            <ul class="dropdown-menu">
-              <li><a href="halskaeder">Halskæder</a></li>
-              <li><a href="ringe">Ringe</a></li>
-              <li><a href="armbaand">Armbånd</a></li>
-            </ul>
-          </li>
-          <li><a href="tjenester">TJENESTER</a></li>
-          <li><a href="om-os">OM OS</a></li>
-        </ul>
-        
-        <div class="menu2">
-          <a href="index.astro"><img src="../img/search.svg" alt="search" class="ikon" /></a>
-          <a href="index.astro"><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
-      </div>
-
-</ul>
-
-    </nav>
+    <div class="menu2">
+      <a href="index.astro"><img src="../img/search.svg" alt="search" class="ikon" /></a>
+      <a href="index.astro"><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
+    </div>
+  </nav>
 </header>
-
-
 
 <style>
   * ---------------------------- HEADER / BURGERMENU MOBIL VERSION---------------------------- */
 /* Header styling */
 .header {
-  background-color: #F9F2F2;
-  width: 100%;
-}
-
-.logodesk{
-    max-width: 13%;
-  height: auto;
-  padding-left: 10px;
-  padding-top: 10px;
-}
-
-.menu2{
-  display: none;
-}
-
-.ikon{
-  max-width: 8%;
-  height: auto;
-  display: inline-block;
-  float: right;
-  position: relative;
-  padding-right: 12px;
-  padding-top: 2px;
-  
-}
-
-.header ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-  background-color: var(--primary);
-}
-/* Links styling */
-.header li a {
-  font-family: orbitron;
-  font-weight: 400;
-  font-style: normal;
-  background-color: #F9F2F2;
-  color: #1b72d0;
-  display: block;
-  padding: 20px 20px;
-  text-decoration: none;
-}
-/* Menu styling */
-.menu a:hover {
-  font-family: "josefin-sans", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  color: #e34a6f;
-}
-
-.header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
-}
-/* Menu icon styling */
-
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 40px 20px;
-  position: relative;
-  user-select: none;
-}
-
-.header .menu-icon .navicon {
-  background: black;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background 0.2s ease-out;
-  width: 18px;
-}
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background: #000000;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-}
-
-.header .menu-icon .navicon:before {
-  top: 5px;
-}
-
-.header .menu-icon .navicon:after {
-  top: -5px;
-}
-
-.header .menu-btn {
-  display: none;
-}
-
-.header .menu-btn:checked ~ .menu {
-  max-height: 240px;
-}
-/* funktion på de 3 streger til burgermenu */
-
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
-}
-
-/* ---------------------------- MENU DESKTOP---------------------------- */
-
-@media (min-width: 768px) {
-  header {
+    background-color: #f9f2f2;
     width: 100%;
-    background-color: #F9F2F2;
-    padding: 5px;
-    position:fixed;
   }
 
-  .logodesk{
-    max-width: 100%;
-  height: auto;
-  padding-left: 20px;
-  padding-top: 10px;
-}
-
-.ikon{
-  max-width: 20%;
-  height: auto;
-  display: inline-block;
-  float: right;
-  position: relative;
-  
-}
-
-.menu{
-  display: none;
-}
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .logodesk {
+    max-width: 13%;
+    height: auto;
+    padding-left: 10px;
+    padding-top: 10px;
   }
 
-  nav img {
-    max-width: 40%;
-  }
-
-
-  a {
-    text-decoration: none;
-    color: black;
-    font-family: "josefin-sans", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 1.5rem;
-    margin-bottom: 7px;
-  }
-
-  .streg1 {
-    border: 2px solid var(--accent);
-    margin-top: 1rem;
-  }
-
-  .streg2 {
-    border: 1px solid var(--accent);
-    margin-top: 0.3rem;
-  }
-
-  .header .menu {
-    clear: none;
-    max-height: none;
-  }
-
-  .header .menu-icon {
+  .menu2 {
     display: none;
   }
 
-/* Generel styling for menu */
-.menu2 {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  gap: 1px; /* Afstand mellem menupunkter */
-  
-}
+  .ikon {
+    max-width: 8%;
+    height: auto;
+    display: inline-block;
+    float: right;
+    position: relative;
+    padding-right: 12px;
+    padding-top: 2px;
+  }
 
-.menu2 li {
-  position: relative; /* Nødvendig for at placere dropdown korrekt */
-}
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: var(--primary);
+  }
+  /* Links styling */
+  .header li a {
+    font-family: orbitron;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f9f2f2;
+    color: #1b72d0;
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+  /* Menu styling */
+  .menu a:hover {
+    font-family: "josefin-sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #e34a6f;
+  }
 
-.menu2 a {
-  text-decoration: none;
-  font-family: "josefin-sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #000000;
-  padding: 7px 5px;
-  display: block;
-  transition: color 0.3s;
-}
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+  /* Menu icon styling */
 
-.menu2 a:hover {
-  color: #e34a6f; /* Hover-effekt */
-}
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 40px 20px;
+    position: relative;
+    user-select: none;
+  }
 
-/* Dropdown-menu styling */
-.dropdown-menu {
-  position: absolute;
-  top: 100%; /* Lige under hovedmenuen */
-  left: 0;
-  background-color: #fff; /* Baggrundsfarve */
-  border: 1px solid #ddd; /* Kant for dropdown */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none; /* Skjult som standard */
-  z-index: 10;
-  min-width: 150px; /* Minimum bredde */
-}
+  .header .menu-icon .navicon {
+    background: black;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
 
-.dropdown-menu li {
-  text-align: left;
-}
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #000000;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
 
-.dropdown-menu a {
-  padding: 10px 15px;
-  color: #000;
-  display: block;
-}
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
 
-.dropdown-menu a:hover {
-  background-color: #f4f4f4; /* Hover-effekt */
-  color: #e34a6f;
-}
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
 
-/* Vis dropdown ved hover */
-.menu2 .dropdown:hover .dropdown-menu {
-  display: block; /* Gør dropdown synlig */
-}
+  .header .menu-btn {
+    display: none;
+  }
 
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  /* funktion på de 3 streger til burgermenu */
 
-}
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  /* ---------------------------- MENU DESKTOP---------------------------- */
+
+  @media (min-width: 768px) {
+    header {
+      width: 100%;
+      background-color: #f9f2f2;
+      padding: 5px;
+      position: sticky;
+      top: 0; /* Sørger for at headeren bliver siddende øverst */
+      z-index: 100; /* Sørger for, at headeren er ovenpå andet indhold */
+    }
+
+    .logodesk {
+      max-width: 100%;
+      height: auto;
+      padding-left: 20px;
+      padding-top: 10px;
+    }
+
+    .ikon {
+      max-width: 20%;
+      height: auto;
+      display: inline-block;
+      float: right;
+      position: relative;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav img {
+      max-width: 40%;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-family: "josefin-sans", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 1.5rem;
+      margin-bottom: 7px;
+    }
+
+    .streg1 {
+      border: 2px solid var(--accent);
+      margin-top: 1rem;
+    }
+
+    .streg2 {
+      border: 1px solid var(--accent);
+      margin-top: 0.3rem;
+    }
+
+    .header .menu {
+      clear: none;
+      max-height: none;
+    }
+
+    .header .menu-icon {
+      display: none;
+    }
+
+    /* Generel styling for menu */
+    .menu2 {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 1px; /* Afstand mellem menupunkter */
+    }
+
+    .menu2 li {
+      position: relative; /* Nødvendig for at placere dropdown korrekt */
+    }
+
+    .menu2 a {
+      text-decoration: none;
+      font-family: "josefin-sans", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: #000000;
+      padding: 7px 5px;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    .menu2 a:hover {
+      color: #e34a6f; /* Hover-effekt */
+    }
+
+    /* Dropdown-menu styling */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%; /* Lige under hovedmenuen */
+      left: 0;
+      background-color: #fff; /* Baggrundsfarve */
+      border: 1px solid #ddd; /* Kant for dropdown */
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none; /* Skjult som standard */
+      z-index: 10;
+      min-width: 150px; /* Minimum bredde */
+    }
+
+    .dropdown-menu li {
+      text-align: left;
+    }
+
+    .dropdown-menu a {
+      padding: 10px 15px;
+      color: #000;
+      display: block;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f4f4f4; /* Hover-effekt */
+      color: #e34a6f;
+    }
+
+    /* Vis dropdown ved hover */
+    .menu2 .dropdown:hover .dropdown-menu {
+      display: block; /* Gør dropdown synlig */
+    }
+  }
 </style>
