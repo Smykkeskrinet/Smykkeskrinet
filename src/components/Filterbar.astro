@@ -1,77 +1,15 @@
 ---
-import "../js/js.js";
+ 
 ---
 
-<div class="action-bar">
-    <button class="filter-button">
-      Filter
-      <span class="filter-icon">☰</span>
-    </button>
-    <div class="spacer"></div>
-    <div class="sort-dropdown">
-      <button class="sort-button" id="sort-toggle">
-        Sorter
-        <span class="sort-icon">▲</span>
-      </button>
-      <ul class="dropdown-menu" id="sort-menu">
-        <li>Fremhævet</li>
-        <li>Bestsellere</li>
-        <li>Alfabetisk, A–Å</li>
-        <li>Alfabetisk, Å–A</li>
-        <li>Pris, lav til høj</li>
-        <li>Pris, høj til lav</li>
-        <li>Dato, ældre til nyere</li>
-        <li>Dato, nyere til ældre</li>
-      </ul>
-    </div>
+<div>
+    <img src="../img/filter-bar_desktop.svg" alt="hero" class="filterbar"/>
   </div>
-
+  
   <style>
-    /* Dropdown-knap og container */
-.sort-dropdown {
-  position: relative;
-}
 
-.sort-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+img{
+    width: 100%;
 }
-
-/* Dropdown-menu */
-.dropdown-menu {
-  display: none; /* Skjult som standard */
-  position: absolute;
-  top: 100%; /* Placeret lige under knappen */
-  right: 0; /* Justeret til højre */
-  background-color: #333; /* Mørk baggrund */
-  color: white;
-  list-style: none;
-  padding: 8px 0;
-  margin: 0;
-  width: 200px; /* Fast bredde */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Let skygge */
-  z-index: 100; /* Overlap på andre elementer */
-}
-
-.dropdown-menu li {
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-  background-color: #444; /* Fremhæv ved hover */
-}
-
-/* Når menuen er synlig */
-.dropdown-menu.active {
-  display: block;
-}
-
   </style>
   

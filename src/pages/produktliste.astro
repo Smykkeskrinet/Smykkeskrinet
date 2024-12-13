@@ -2,6 +2,7 @@
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Card from "../components/Card.astro";
+import Filterbar from "../components/Filterbar.astro";
 import Shelf from "../components/Shelf.astro";
 import "../pages/singleview.astro";
 import "../styles/style.css";
@@ -39,6 +40,7 @@ const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
       <img src="../img/koral2.webp" alt="hero" />
     </div>
   </section>
+  <Filterbar />
     <main>
       {
         data.map((product) => {
