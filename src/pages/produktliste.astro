@@ -2,6 +2,7 @@
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Card from "../components/Card.astro";
+import Shelf from "../components/Shelf.astro";
 import "../pages/singleview.astro";
 import "../styles/style.css";
 
@@ -36,7 +37,7 @@ const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
           return <Card {...product} />;
         })
       }
-     
+  
     </main>
   </body>
   <footer>
@@ -45,10 +46,26 @@ const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
 </html>
 
 <style>
-  h1 {
-    font-family: orbitron;
-    color: #1b72d0;
-    font-size: 50px;
-    margin: 1rem;
+ main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
+  gap: 2x; /* Afstand mellem kortene */
+  padding: 5px; /* Indre afstand */
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr; /* En enkelt kolonne på mindre skærme */
+    padding: 16px;
   }
+}
+
+h1 {
+  font-family: Orbitron, sans-serif;
+  color: #1b72d0;
+  font-size: 50px;
+  margin: 1rem;
+  
+}
+
 </style>
