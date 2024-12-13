@@ -67,6 +67,7 @@
 
   .img-hero1 img,
   .img-hero2 img {
+    display: flex;
     width: 100%; /* Sørg for, at billederne fylder deres grid-celler */
     height: auto;
     object-fit: cover; /* Tilpas billedet uden at forvrænge det */
@@ -75,16 +76,29 @@
   /*DESKTOP*/
   @media (min-width: 700px) {
     /*viser begger billeder*/
-    .img-hero1,
-    .img-hero2 {
-      display: block;
-      flex: 1; /* Sørg for, at begge billeder deler pladsen ligeligt */
-      margin-top: 6%;
+    .hero_content {
+      position: absolute;
+      top: 20%; /* Centrerer vertikalt */
+      left: 20%; /* Centrerer horisontalt */
+    }
+    .hero_imgs {
+      display: flex; /* Sørger for, at billederne placeres side om side */
+      flex-direction: row; /* På desktop skal billederne ligge ved siden af hinanden */
+      width: 100%;
     }
 
-    .hero_imgs {
-      display: flex;
-      width: 100%;
+    .img-hero1,
+    .img-hero2 {
+      display: block; /* Sørger for, at billederne bliver synlige */
+      flex: 1; /* Sørger for, at begge billeder fylder lige meget */
+      max-width: 50%; /* Sikrer, at billederne ikke overskrider halvdelen af pladsen */
+    }
+
+    .img-hero1 img,
+    .img-hero2 img {
+      width: 100%; /* Billederne fylder hele bredden af deres container */
+      height: auto; /* Holder proportioner */
+      object-fit: cover; /* Bevarer billedformat uden forvrængning */
     }
 
     .herosection h1 {
