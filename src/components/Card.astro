@@ -4,7 +4,6 @@ import Button from "../components/Button.astro";
 // console.log(data);
 ---
 
-
 <article>
   <div>
     <img src={billede} alt="billede" height="460" width="430" />
@@ -15,50 +14,48 @@ import Button from "../components/Button.astro";
     <p>{pris}</p>
     <br />
   </div>
-  <Button label="Se mere"/>
+  <a href="singleview">
+    <Button label="Se mere" />
+  </a>
 </article>
 
-
 <style>
+  article {
+    /* width: 300px;  */
+    margin: 2rem;
+    border: 1px solid #3c3636; /* Tynder grænse */
+    overflow: hidden; /* Skjuler overløb */
+    background-color: #f9f9f9; /* Baggrundsfarve */
+  }
 
-article {
-  /* width: 300px;  */
-  margin: 2rem;
-  border: 1px solid #3C3636; /* Tynder grænse */
-  overflow: hidden; /* Skjuler overløb */
-  background-color: #f9f9f9; /* Baggrundsfarve */
-}
+  article img {
+    width: 100%; /* Billede fylder hele bredden */
+    height: auto; /* Bevarer billedets proportioner */
+  }
 
-article img {
-  width: 100%; /* Billede fylder hele bredden */
-  height: auto; /* Bevarer billedets proportioner */
-}
+  article div {
+    padding: 16px; /* Indrykning indenfor boksen */
+  }
 
-article div {
-  padding: 16px; /* Indrykning indenfor boksen */
-}
+  article h3 {
+    font-size: 1.2rem;
+    text-align: start;
+    font-weight: bold; /* Fremhæver navnet */
+    font-family: orbitron;
+    color: #3c3636;
+  }
 
-article h3 {
-  font-size: 1.2rem;
- text-align: start;
-  font-weight: bold; /* Fremhæver navnet */
-  font-family: orbitron;
-  color: #3C3636;
-}
+  article p {
+    text-align: start;
+    color: #3c3636;
+    font-family: poppins;
+  }
 
-article p {
-  text-align: start;
-  color: #3C3636;
-  font-family: poppins;
-}
-
-article p:last-of-type {
-  color: #007bff; /* Blå tekstfarve til pris */
-  font-weight: bold; /* Fremhævet pris */
-  font-family: orbitron;
-}
-
-
+  article p:last-of-type {
+    color: #007bff; /* Blå tekstfarve til pris */
+    font-weight: bold; /* Fremhævet pris */
+    font-family: orbitron;
+  }
 
   @media screen and (max-width: 768px) {
     li {
