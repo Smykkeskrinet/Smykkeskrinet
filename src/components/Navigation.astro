@@ -30,10 +30,11 @@
       <li><a href="om-os">OM OS</a></li>
     </ul>
 
-    <ul class="menu2">
+    <ul class="menu-desktop">
       <li class="dropdown">
         <a href="produktliste">SMYKKER</a>
         <ul class="dropdown-menu">
+          <li><a href="oereringe">Øreringe</a></li>
           <li><a href="halskaeder">Halskæder</a></li>
           <li><a href="ringe">Ringe</a></li>
           <li><a href="armbaand">Armbånd</a></li>
@@ -44,8 +45,8 @@
     </ul>
 
     <div class="menu2">
-      <a href="index"><img src="../img/search.svg" alt="search" class="ikon" /></a>
-      <a href="index"><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
+      <a href=""><img src="../img/search.svg" alt="search" class="ikon" /></a>
+      <a href=""><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
     </div>
   </nav>
 </header>
@@ -83,7 +84,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow: hidden;
     background-color: var(--primary);
   }
   /* Links styling */
@@ -219,7 +219,7 @@
     a {
       text-decoration: none;
       color: black;
-      font-family: "josefin-sans", sans-serif;
+      font-family: orbitron;
       font-weight: 600;
       font-style: normal;
       font-size: 1.5rem;
@@ -260,12 +260,9 @@
 
     .menu2 a {
       text-decoration: none;
-      font-family: "josefin-sans", sans-serif;
-      font-weight: 400;
+      font-family: poppins;
       font-style: normal;
       color: #000000;
-      padding: 7px 5px;
-      display: block;
       transition: color 0.3s;
     }
 
@@ -306,6 +303,21 @@
     /* Vis dropdown ved hover */
     .menu2 .dropdown:hover .dropdown-menu {
       display: block; /* Gør dropdown synlig */
+    }
+
+    .menu-desktop {
+      display: flex;
+    }
+
+    .menu-desktop .dropdown:hover .dropdown-menu {
+      display: block;
+      position: absolute;
+      background-color: #f9f2f2;
+      z-index: 1000;
+    }
+    .menu-desktop .dropdown {
+      position: relative;
+      z-index: 1000;
     }
   }
 </style>
