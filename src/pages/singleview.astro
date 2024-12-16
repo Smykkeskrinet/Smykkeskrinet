@@ -1,5 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 //https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker
 export async function getStaticPaths() {
@@ -30,10 +31,12 @@ const { produkt } = Astro.props;
   <body>
     <Navigation />
     <h1>{produkt.navn}</h1>
+    <h3>{produkt.brand}</h3>
     <h3>{produkt.pris}</h3>
     <p>{produkt.beskrivelse}</p>
-    <h3>{produkt.brand}</h3>
-    <main></main>
+    <main>
+      <Footer />
+    </main>
   </body>
 </html>
 
