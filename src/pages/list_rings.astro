@@ -1,0 +1,105 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+import Filterbar from "../components/Filterbar.astro";
+import "../styles/style.css";
+
+const type = "ring";
+
+const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker?produkt=eq.${type}`, {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6YXFmd2dicnV2bGx2ZGxwYWJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMzOTMyNjgsImV4cCI6MjA0ODk2OTI2OH0.RBngwuyg62kGxohOAq847cclytJ9kdChHAHwghgCW0g",
+  },
+}).then((res) => res.json());
+---
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+</head>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Navigation />
+    <section class="grid2">
+      <div>
+    <h1>EARRINGS</h1>
+    <p>Se vores udvalg af øreringe nedenunder </p>
+  </div>
+    <div>
+      <img src="../img/koral2.webp" alt="hero" />
+    </div>
+  </section>
+  <Filterbar />
+    <main>
+      {
+        data.map((product) => {
+          return <Card {...product} />;
+        })
+      }
+  
+    </main>
+  </body>
+  <footer>
+    <Footer />
+  </footer>
+</html>
+
+<style>
+
+  
+.grid2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F9F2F2;; /* Baggrundsfarve */
+  padding-left: 3rem;
+}
+
+img{
+  width: 100%;
+}
+
+p{
+  font-family: poppins;
+}
+
+ main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
+  gap: 2x; /* Afstand mellem kortene */
+  padding: 5px; /* Indre afstand */
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr; /* En enkelt kolonne på mindre skærme */
+    padding: 16px;
+  }
+
+  .grid2{
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #F9F2F2;; /* Baggrundsfarve */
+  padding-left: 0rem;
+}
+}
+
+h1 {
+  font-family: Orbitron, sans-serif;
+  color: #1b72d0;
+  font-size: 50px;
+
+  
+}
+
+</style>

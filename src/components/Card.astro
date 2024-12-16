@@ -1,7 +1,5 @@
 ---
-import "../pages/singleview.astro";
-import "../pages/produktliste.astro";
-const { navn, brand, pris, billede } = Astro.props;
+const { id, navn, brand, pris, billede } = Astro.props;
 import Button from "../components/Button.astro";
 // console.log(data);
 ---
@@ -16,7 +14,7 @@ import Button from "../components/Button.astro";
     <p>{pris}</p>
     <br />
   </div>
-  <a href="singleview">
+  <a href=`single${id}`/>
     <Button label="Se mere" />
   </a>
 </article>

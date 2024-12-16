@@ -3,11 +3,11 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Card from "../components/Card.astro";
 import Filterbar from "../components/Filterbar.astro";
-import Shelf from "../components/Shelf.astro";
-import "../pages/singleview.astro";
 import "../styles/style.css";
 
-const data = await fetch("https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker", {
+const type = "earring";
+
+const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker?produkt=eq.${type}`, {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6YXFmd2dicnV2bGx2ZGxwYWJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMzOTMyNjgsImV4cCI6MjA0ODk2OTI2OH0.RBngwuyg62kGxohOAq847cclytJ9kdChHAHwghgCW0g",
