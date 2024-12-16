@@ -63,9 +63,9 @@ img{
 
   @media (min-width: 700px) {
     .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
+      display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
+  gap: 2x; /* Afstand mellem kortene */
   }
   }
 </style>
