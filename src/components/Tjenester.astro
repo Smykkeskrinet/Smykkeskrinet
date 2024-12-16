@@ -9,19 +9,17 @@
 </head>
 
 <section class="tjenester">
-  <h1>TJENESTER</h1>
   <div class="tjenester_desktop">
-    <div class="tjeneste_img">
+    <div>
       <img src="../img/piercing.webp" alt="hero" />
     </div>
-
-    <div class="tekst_og_knap">
-      <div class="knap">
+    
+    <div class="text">
+      <h1>TJENESTER</h1>
         <p>Hos os har du også mulighed for at få målt din ringstørrelse, få skudt huller i ørerne og få indgraveret dine smykker. Du kan se mere nedenfor</p>
-        <a href="">
-          <img src="../img/Se_mere_normal.svg" alt="hero" />
+        <a  href="tjenester">
+          <img src="../img/Se_mere_normal.svg" alt="hero" class="knap" />
         </a>
-      </div>
     </div>
   </div>
 </section>
@@ -31,6 +29,12 @@
     margin: 0;
     padding: 0;
   }
+
+  .tjenester_desktop{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .tjenester {
     background-color: #f9f2f2;
     margin-top: 3rem;
@@ -55,48 +59,65 @@
     padding: 2rem;
   }
 
+  .text{
+    margin: 1rem
+  }
+
   p {
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
-    padding-bottom: 2rem;
     color: #3c3636;
+    font-family: poppins;
   }
 
   .knap {
-    align-items: center; /* Centrerer lodret */
-    width: 80%;
-    padding-left: 5.5rem;
     transition: 0.2s ease;
+    width: 50%;
   }
+
+  .knap :hover {
+   content: url("../img/Se_mere_hover.svg");
+  }
+
 
   @media (min-width: 700px) {
     .tjenester {
-      background-color: transparent; /* Fjern baggrundsfarve på desktop */
+      background-color: #f9f2f2;
     }
     .tjenester_desktop {
-      display: flex; /* Gør containeren fleksibel, så børnene kan placeres side om side */
-      justify-content: space-between; /* Fordel pladsen mellem billedet og tekst/knap */
-    }
-    .tekst_og_knap p {
-      font-size: 20px;
-      max-width: 75ch;
-      text-align: left; /* Placer teksten til venstre */
+      display: grid; /* Gør containeren fleksibel, så børnene kan placeres side om side */
+      grid-template-columns: 1fr 1fr;
+
     }
 
-    h1 {
-      font-size: 80px;
-      text-align: center; /* Justér h1 til venstre */
-      padding-left: 50%;
-    }
+.text{
+  text-align: left;
+}
 
-    p {
-      font-size: 20px;
-      max-width: 75ch;
-      text-align: left;
-    }
+h1 {
+    font-size: 50px;
+    text-align: left;
+    padding-bottom: 2rem;
+    margin: 0;
+    font-family: orbitron;
+    color: #1b72d0;
+  }
+
+p {
+    font-size: 14px;
+    text-align: left;
+    color: #3c3636;
+    font-family: poppins;
+  }
 
     .knap {
-      width: 30%;
-    }
+    transition: 0.2s ease;
+    width: 30%;
+  }
+   
+  .knap :hover {
+   content: url("../img/Se_mere_hover.svg");
+  }
+
   }
 </style>
