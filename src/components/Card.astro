@@ -1,24 +1,22 @@
 ---
-const { id, navn, brand, pris, billede } = Astro.props;
+const {product } = Astro.props;
 import Button from "../components/Button.astro";
 // console.log(data);
 ---
-
+<a href=`single/${product.id}`>
 <article>
   <div>
-    <img src={billede} alt="billede" height="460" width="430" />
+    <img src={product.billede} alt="billede" height="460" width="430" />
     <h3>
-      {navn}
+      {product.navn}
     </h3>
-    <p>{brand}</p>
-    <p>{pris}</p>
+    <p>{product.brand}</p>
+    <p>{product.pris}</p>
     <br />
   </div>
-  <a href=`single${id}`/>
-    <Button label="Se mere" />
-  </a>
+  <button>Se mere</button>
 </article>
-
+</a>
 <style>
   article {
     /* width: 300px;  */
