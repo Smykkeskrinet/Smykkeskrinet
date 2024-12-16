@@ -4,7 +4,7 @@ const {product } = Astro.props;
 import Button from "../components/Button.astro";
 // console.log(data);
 ---
-<a href=`single/${product.id}`>
+
 <article>
   <div>
     <img src={product.billede} alt="billede" height="460" width="430" />
@@ -15,9 +15,9 @@ import Button from "../components/Button.astro";
     <p>{product.pris}</p>
     <br />
   </div>
-  <button>Se mere</button>
+  <a href=`single/${product.id}` class="se-mere">Se mere</a>
 </article>
-</a>
+
 <style>
   article {
     /* width: 300px;  */
@@ -54,6 +54,26 @@ import Button from "../components/Button.astro";
     color: #007bff; /* Blå tekstfarve til pris */
     font-weight: bold; /* Fremhævet pris */
     font-family: orbitron;
+  }
+
+  .se-mere {
+    display: block; /* Gør knappen til en blok */
+    width: 100%; /* Fylder hele bredden */
+    padding: 12px 0; /* Indre afstand */
+    background-color: #F9F2F2; /* Hvid baggrund */
+    font-family: orbitron;
+    color: #3C3636; /* Sort tekstfarve */
+    font-size: 13px;
+    text-decoration: none; /* Fjerner understregning */
+    border-top: 1px solid #3C3636; /* Skillelinje over knappen */
+    font-weight: bold; /* Fremhævet tekst */
+    text-align: center; /* Centrerer teksten */
+    transition: background-color 0.3s, color 0.3s; /* Animation ved hover */
+  }
+
+  .se-mere:hover {
+    background-color: #007bff; /* Blå baggrund ved hover */
+    color: #F9F2F2; /* Hvid tekst ved hover */
   }
 
   @media screen and (max-width: 768px) {
