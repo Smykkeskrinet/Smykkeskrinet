@@ -5,7 +5,7 @@ import Card from "../components/Card.astro";
 import Filterbar from "../components/Filterbar.astro";
 import "../styles/style.css";
 
-const type = "earring";
+const type = "necklace";
 
 const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker?produkt=eq.${type}`, {
   method: "GET",
@@ -33,7 +33,7 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
     <Navigation />
     <section class="grid2">
       <div>
-    <h1>EARRINGS</h1>
+    <h1>HALSKÆDER</h1>
     <p>Se vores udvalg af øreringe nedenunder </p>
   </div>
     <div>

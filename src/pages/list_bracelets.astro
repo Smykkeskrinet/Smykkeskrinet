@@ -33,7 +33,7 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
     <Navigation />
     <section class="grid2">
       <div>
-    <h1>EARRINGS</h1>
+    <h1>ARMBÅND</h1>
     <p>Se vores udvalg af øreringe nedenunder </p>
   </div>
     <div>
@@ -44,7 +44,7 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
     <main>
       {
         data.map((product) => {
-          return <Card {...product} />;
+          return <Card {product} />;
         })
       }
   
