@@ -8,36 +8,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
 </head>
 
-<section class="big_container">
-  <section class="container1">
-    <div class="group1">
+<section class="container">
+    <div>
       <a href="list_earrings">
         <h3>ØRERINGE</h3>
-        <img src="../img/earrings.png" alt="hero" class="kategori" />
+        <img src="../img/earrings.webp" alt="hero" class="kategori" />
       </a>
     </div>
-    <div class="group2">
+    <div>
       <a href="list_rings">
         <h3>RINGE</h3>
-        <img src="../img/rings.png" alt="hero" class="kategori" />
+        <img src="../img/ringe4.webp" alt="hero" class="kategori" />
       </a>
     </div>
-  </section>
-
-  <section class="container2">
-    <div class="group3">
+    <div>
       <a href="list_necklaces">
         <h3>HALSKÆDER</h3>
-        <img src="../img/necklace.png" alt="hero" class="kategori" />
+        <img src="../img/necklace1.webp" alt="hero" class="kategori" />
       </a>
     </div>
-    <div class="group4">
+    <div>
       <a href="list_bracelets">
         <h3>ARMBÅND</h3>
-        <img src="../img/bracelet.png" alt="hero" class="kategori" />
+        <img src="../img/bracelet.webp" alt="hero" class="kategori" />
       </a>
     </div>
-  </section>
 </section>
 
 <style>
@@ -49,7 +44,11 @@
     font-family: orbitron;
     color: #1b72d0;
     text-decoration: none;
-    font-size: 5rem;
+    font-size: 30px;
+  }
+
+  a{
+    text-decoration: none;
   }
 
   .big_container {
@@ -58,9 +57,13 @@
 
   .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
   }
+
+img{
+  width: 100%;
+}
 
   @media (min-width: 700px) {
     .container1 {
