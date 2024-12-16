@@ -14,23 +14,18 @@
     <a href="index"><img src="../img/logo.png" alt="logo" class="logodesk" /></a>
 
     <!-- Menu Button -->
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
     <!-- Ikoner -->
-    <div class="menu">
-      <a href="index"><img src="../img/search.svg" alt="search" class="ikon" /></a>
-      <a href="index"><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
-    </div>
 
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
     <!-- Menu Links -->
-    <ul class="menu">
+    <!-- <ul class="menu">
       <li><a href="produktliste">SMYKKER</a></li>
       <li><a href="tjenester">TJENESTER</a></li>
       <li><a href="om-os">OM OS</a></li>
-    </ul>
+    </ul> -->
 
-    <ul class="menu-desktop">
+    <ul class="main_menu">
       <li class="dropdown">
         <a href="produktliste">SMYKKER</a>
         <ul class="dropdown-menu">
@@ -44,9 +39,11 @@
       <li><a href="om-os">OM OS</a></li>
     </ul>
 
-    <div class="menu2">
-      <a href=""><img src="../img/search.svg" alt="search" class="ikon" /></a>
-      <a href=""><img src="../img/shoppingbag.svg" alt="shopping bag" class="ikon" /></a>
+    <div class="icon_menu">
+      <a href="#"><img src="../img/search.svg" alt="search" /></a>
+      <a href="#"><img src="../img/shoppingbag.svg" alt="shopping bag" /></a>
+
+      <label for="menu-btn"><span class="navicon"></span></label>
     </div>
   </nav>
 </header>
@@ -54,30 +51,53 @@
 <style>
   * ---------------------------- HEADER / BURGERMENU MOBIL VERSION---------------------------- */
 /* Header styling */
-.header {
-    background-color: #f9f2f2;
+
+.html {
+    /* beskytter mod at siden er bredere ens den tilgængelige skærmplads */
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body {
+    /* Sikrer at striber gentager sig lodret */
+    background-repeat: repeat-y;
+  }
+
+  .header {
     width: 100%;
   }
 
-  .logodesk {
-    max-width: 13%;
-    height: auto;
-    padding-left: 10px;
-    padding-top: 10px;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
   }
 
-  .menu2 {
+  .logodesk {
+    max-width: 35%;
+    height: auto;
+    /* padding-left: 10px;
+    padding-top: 10px; */
+  }
+
+  .main_menu {
     display: none;
   }
 
-  .ikon {
-    max-width: 8%;
+  .icon_menu {
+    display: flex;
+    /* margin-left: 55%; */
+    justify-content: space-between;
+    flex-grow: 0.7;
+  }
+  .icon_menu a img,
+  .icon_menu label {
+    max-width: 32px;
     height: auto;
-    display: inline-block;
-    float: right;
-    position: relative;
-    padding-right: 12px;
-    padding-top: 2px;
+
+    /* padding-right: 12px;
+    padding-top: 2px; */
   }
 
   .header ul {
@@ -98,30 +118,29 @@
     text-decoration: none;
   }
   /* Menu styling */
-  .menu a:hover {
+  .main_menu a:hover {
     font-family: "josefin-sans", sans-serif;
     font-weight: 600;
     font-style: normal;
     color: #e34a6f;
   }
 
-  .header .menu {
+  .header .main_menu {
     clear: both;
     max-height: 0;
     transition: max-height 0.2s ease-out;
   }
   /* Menu icon styling */
 
-  .header .menu-icon {
-    cursor: pointer;
-    display: inline-block;
-    float: right;
-    padding: 40px 20px;
+  .header .icon_menu {
+    /* cursor: pointer; */
+    display: flex;
+    /* float: right; */
     position: relative;
     user-select: none;
   }
 
-  .header .menu-icon .navicon {
+  .navicon {
     background: black;
     display: block;
     height: 2px;
@@ -130,8 +149,8 @@
     width: 18px;
   }
 
-  .header .menu-icon .navicon:before,
-  .header .menu-icon .navicon:after {
+  .navicon:before,
+  .navicon:after {
     background: #000000;
     content: "";
     display: block;
@@ -141,37 +160,41 @@
     width: 100%;
   }
 
-  .header .menu-icon .navicon:before {
-    top: 5px;
+  .header .icon_menu .navicon:before {
+    /* top: 5px; */
   }
 
-  .header .menu-icon .navicon:after {
-    top: -5px;
+  .header .icon_menu .navicon:after {
+    /* top: -5px; */
   }
 
   .header .menu-btn {
     display: none;
   }
 
-  .header .menu-btn:checked ~ .menu {
-    max-height: 240px;
+  .header .menu-btn:checked ~ .main_menu {
+    display: block;
+    position: fixed; /* positionerer efter hele skærmen */
+    width: 100vw; /* VW fordi det knytter sig til hele skærmstørrelsen */
+    left: 0;
+    top: 88px;
   }
   /* funktion på de 3 streger til burgermenu */
 
-  .header .menu-btn:checked ~ .menu-icon .navicon {
+  .header .menu-btn:checked ~ .icon_menu .navicon {
     background: transparent;
   }
 
-  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+  .header .menu-btn:checked ~ .icon_menu .navicon:before {
     transform: rotate(-45deg);
   }
 
-  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+  .header .menu-btn:checked ~ .icon_menu .navicon:after {
     transform: rotate(45deg);
   }
 
-  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  .header .menu-btn:checked ~ .icon_menu:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .icon_menu:not(.steps) .navicon:after {
     top: 0;
   }
 
@@ -180,7 +203,7 @@
   @media (min-width: 768px) {
     header {
       width: 100%;
-      background-color: #f9f2f2;
+      /* background-color: #f9f2f2; */
       padding: 5px;
       position: sticky;
       top: 0; /* Sørger for at headeren bliver siddende øverst */
@@ -194,22 +217,12 @@
       padding-top: 10px;
     }
 
-    .ikon {
+    .icon_menu a img {
       max-width: 20%;
       height: auto;
       display: inline-block;
-      float: right;
+      /* float: right; */
       position: relative;
-    }
-
-    .menu {
-      display: none;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     nav img {
@@ -222,7 +235,7 @@
       font-family: orbitron;
       font-weight: 600;
       font-style: normal;
-      font-size: 1.5rem;
+      font-size: 1rem;
       margin-bottom: 7px;
     }
 
@@ -241,33 +254,8 @@
       max-height: none;
     }
 
-    .header .menu-icon {
+    .icon_menu label {
       display: none;
-    }
-
-    /* Generel styling for menu */
-    .menu2 {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      gap: 1px; /* Afstand mellem menupunkter */
-    }
-
-    .menu2 li {
-      position: relative; /* Nødvendig for at placere dropdown korrekt */
-    }
-
-    .menu2 a {
-      text-decoration: none;
-      font-family: poppins;
-      font-style: normal;
-      color: #000000;
-      transition: color 0.3s;
-    }
-
-    .menu2 a:hover {
-      color: #e34a6f; /* Hover-effekt */
     }
 
     /* Dropdown-menu styling */
@@ -275,7 +263,8 @@
       position: absolute;
       top: 100%; /* Lige under hovedmenuen */
       left: 0;
-      background-color: #fff; /* Baggrundsfarve */
+      /* background-color: #fff; */
+      /* Baggrundsfarve */
       border: 1px solid #ddd; /* Kant for dropdown */
       list-style: none;
       padding: 0;
@@ -301,23 +290,26 @@
     }
 
     /* Vis dropdown ved hover */
-    .menu2 .dropdown:hover .dropdown-menu {
+    .main_menu .dropdown:hover .dropdown-menu {
       display: block; /* Gør dropdown synlig */
     }
 
-    .menu-desktop {
+    .main_menu {
       display: flex;
+      justify-content: space-between;
+      flex-grow: 2;
     }
 
-    .menu-desktop .dropdown:hover .dropdown-menu {
+    .main_menu .dropdown:hover .dropdown-menu {
       display: block;
       position: absolute;
       background-color: #f9f2f2;
       z-index: 1000;
+      top: 58px;
     }
-    .menu-desktop .dropdown {
+    .main_menu .dropdown {
       position: relative;
-      z-index: 1000;
+      /* z-index: 1000; */
     }
   }
 </style>
