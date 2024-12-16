@@ -31,15 +31,140 @@ const { produkt } = Astro.props;
   </head>
   <body>
     <Navigation />
-    <img src={produkt.billede} alt="billede" height="460" width="430" />
-    <h1>{produkt.navn}</h1>
-    <h3>{produkt.brand}</h3>
-    <h3>{produkt.pris}</h3>
-    <p>{produkt.beskrivelse}</p>
     <main>
+      <section class="content">
+        <div>
+    <img src={produkt.billede} alt="billede" height="460" width="430" />
+  </div>
+  <div>
+    <h1>{produkt.navn}</h1>
+    <h2>{produkt.brand}</h2>
+    <h3 class="pris">{produkt.pris}</h3>
+    <div>
+    <img src="../img/gold_silver.svg" alt="hero" class="farver"/> 
+  </div>
+  <div>
+    <img src="../img/betalingsmetoder.svg" alt="hero" class="betalingsmetoder"/> 
+  </div>
+    <a class="se-mere">Læg i kurv</a>
+  </div>
+  
+</section>
+
+<section class="content">
+  <div>
+    <h4>Beskrivelse</h4>
+    <p>{produkt.beskrivelse}</p>
+  </div>
+    <div>
+      <img src="../img/koral2.webp" alt="hero" /> 
+    </div>
+  </section>
+      
+  </main>
       <Footer />
-    </main>
+    
   </body>
 </html>
 
-<style></style>
+<style>
+
+main{
+  background-color: #F9F2F2;
+}
+
+.content{
+  margin: 1rem;
+}
+
+h1 {
+  font-family: Orbitron, sans-serif;
+  color: #1b72d0;
+  font-size: 50px;
+  line-height: 1.5;
+}
+
+h2{
+  font-family: poppins;
+  color: #3c3636;
+  line-height: 1.5;
+}
+
+h4{
+  font-family: poppins;
+  color: #3c3636;
+  margin-top: 1rem;
+  
+}
+
+.pris{
+  color: #1b72d0;
+  font-family: Orbitron, sans-serif;
+  line-height: 1.5;
+}
+
+img{
+  width: 100%;
+}
+
+.betalingsmetoder{
+width: 80%;
+
+}
+
+.farver{
+  width: 30%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+p{
+  font-family: poppins;
+  color: #3c3636;
+  font-size: 13px;
+  line-height: 1.5;
+  padding-bottom: 1rem;
+}
+
+.se-mere {
+   display: block;
+   justify-items: center;
+    padding: 20px; /* Indre afstand */
+    background-color: #007bff; /* Hvid baggrund */
+    font-family: orbitron;
+    color: #F9F2F2; /* Sort tekstfarve */
+    font-size: 13px;
+    text-decoration: none; /* Fjerner understregning */
+    font-weight: bold; /* Fremhævet tekst */
+    text-align: center; /* Centrerer teksten */
+    transition: background-color 0.3s, color 0.3s; /* Animation ved hover */
+  }
+
+  .se-mere:hover {
+    background-color: #1457A0; /* Blå baggrund ved hover */
+    color: #F9F2F2; /* Hvid tekst ved hover */
+  }
+
+  @media (min-width: 700px) {
+
+    .content{
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.farver{
+  width: 20%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+.betalingsmetoder{
+  width: 50%;
+}
+
+  }
+
+</style>
