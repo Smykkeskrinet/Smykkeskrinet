@@ -1,5 +1,5 @@
 ---
-
+import "../styles/style.css";
 ---
 
 <head>
@@ -10,58 +10,94 @@
 </head>
 
 <section class="livesalg">
-  <div class="desktop">
-    <div>
-    <h1>LIVE SALG</h1>
-   
-  </div>
-  <div>
-    <p>Følg med på vores Facebook hvor vi holder LIVE-SALG HVER onsdag kl. 14</p>
-  </div>
-      <div>
-        <a href="">
-          <img src="../img/facebook_grey.svg" alt="facebook" />
-          <p>Sæt en påmindelse her</p>
-        </a>
-      </div>
-  </div>
-</section>
+  <h1>LIVE SALG</h1>
 
-<style>
-  .livesalg {
-    background-color: #f9f2f2;
-    padding: 1.5rem;
-  }
+  <p>Følg med på vores Facebook hvor vi holder livesalg HVER onsdag kl. 14</p>
 
-  h1 {
-    font-size: 40px;
-    text-align: center;
-    font-family: orbitron;
-    color: #1b72d0;
-  }
+  <a href="#">
+    <img src="../img/facebook_grey.svg" alt="facebook" />
+    Sæt en påmindelse her
+  </a>
 
-  p {
-    font-size: 15px;
-    text-align: center;
-    font-family: poppins, light;
-    color: #3c3636;
-  }
-
-  img {
-    justify-content: center;
-    width: 40%;
-  }
-
-  @media (min-width: 700px) {
-    .desktop {
-      display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
-  gap: 2x; /* Afstand mellem kortene */
-  padding: 5px; /* Indre afstand */
+  <style>
+    .livesalg {
+      background-color: #f9f2f2;
+      padding: 1.5rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 1rem;
+      border-top: 0.5px solid #3c3636;
+      border-bottom: 0.5px solid #3c3636;
+      margin-bottom: 2rem;
     }
-    
+
+    .livesalg h1,
+    .livesalg p,
+    .livesalg a {
+      text-align: center;
+    }
+
     h1 {
       font-size: 40px;
+      /* text-align: center; */
+      font-family: orbitron;
+      color: #1b72d0;
     }
-  }
-</style>
+
+    .livesalg p {
+      font-family: poppins;
+    }
+
+    .livesalg a {
+      text-align: center;
+      text-decoration: none;
+      font-family: poppins;
+      color: #3c3636;
+      font-size: 12px;
+      line-height: 12px;
+    }
+    .livesalg a img {
+      display: block;
+      margin: auto;
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: 700px) {
+      .livesalg {
+        /* background-color: #f9f2f2; */
+        padding: 1.5rem 1.5rem;
+        /* display: flex; */
+        flex-direction: unset;
+        justify-content: center;
+        align-items: center;
+        column-gap: 2rem;
+        row-gap: unset;
+        /* border-top: 0.5px solid #3c3636; */
+        /* border-bottom: 0.5px solid #3c3636; */
+        /* margin-bottom: 2rem; */
+      }
+
+      .livesalg h1 {
+        text-align: left;
+        text-wrap: nowrap;
+      }
+      .livesalg p {
+        text-align: left;
+      }
+      .livesalg a {
+        text-align: center;
+        text-decoration: none;
+        font-family: poppins;
+        color: #3c3636;
+        font-size: 12px;
+        line-height: 12px;
+      }
+      .livesalg a img {
+        display: block;
+        margin: auto;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</section>
