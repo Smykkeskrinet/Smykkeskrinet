@@ -84,25 +84,10 @@
 
   /*DESKTOP*/
   @media (min-width: 700px) {
-    /*viser begger billeder*/
-
     .herosection {
-      /* display: grid; */
-      /* flex-direction: column; */
-      /* Stack elementer lodret som standard */
-      /* position: relative; */
-      /* overflow: hidden; */
       grid-template-columns: 32px 1fr 1fr 32px; /* fire colums lavet. De midterste er flexible og de to andre (siderne) er 32px*/
       grid-template-rows: 1fr;
       grid-template-areas: ". main main  ."; /* Et billede sidder i den første "1fr" og det andet i den anden "1fr". 32px er kant på teksten så det ikke går helt ud til siderne */
-    }
-
-    .hero_content {
-      /* position: relative; */
-      /* z-index: 1; Sørger for, at tekst og knap er oven på billederne */
-      /* text-align: center; */
-      /* grid-area: main; teksten placeres i "main" */
-      /* align-self: center; */
     }
 
     .herosection h1 {
