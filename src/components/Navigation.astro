@@ -11,7 +11,7 @@
 <header class="header">
   <nav>
     <!-- Logo -->
-    <a href="index"><img src="../img/logo.png" alt="logo" class="logodesk" /></a>
+    <a href="/"><img src="../img/logo.png" alt="logo" class="logodesk" /></a>
 
     <!-- Menu Button -->
 
@@ -27,7 +27,8 @@
 
     <ul class="main_menu">
       <li class="dropdown">
-        <a href="produktliste">SMYKKER</a>
+        <label for="sub_menu-btn" class="menu-items">SMYKKER</label>
+        <input class="menu-btn" type="checkbox" id="sub_menu-btn" />
         <ul class="dropdown-menu">
           <li><a href="list_earrings">Øreringe</a></li>
           <li><a href="list_necklaces">Halskæder</a></li>
@@ -35,8 +36,8 @@
           <li><a href="list_bracelets">Armbånd</a></li>
         </ul>
       </li>
-      <li><a href="tjenester">TJENESTER</a></li>
-      <li><a href="om-os">OM OS</a></li>
+      <li><a class="menu-items" href="tjenester">TJENESTER</a></li>
+      <li><a class="menu-items" href="om-os">OM OS</a></li>
     </ul>
 
     <div class="icon_menu">
@@ -44,6 +45,7 @@
       <a href="#"><img src="../img/shoppingbag.svg" alt="shopping bag" /></a>
 
       <label for="menu-btn"><span class="navicon"></span></label>
+      <!-- span laver krydset og burgermenu ikoner. Label binder det sammen "menu_btn" som styrer at menuen kan foldes ud som bliver stylet i css'en længere nede -->
     </div>
   </nav>
 </header>
@@ -78,62 +80,80 @@
 
   .main_menu {
     display: none;
+    background-color: #f9f2f2;
+    list-style: none;
+  }
+
+  .dropdown li {
+    list-style: none;
   }
 
   .icon_menu {
     display: flex;
     /* margin-left: 55%; */
     justify-content: space-between;
+    max-width: 80px;
     flex-grow: 0.7;
+    order: 3;
+    align-items: center;
   }
   .icon_menu a img,
   .icon_menu label {
-    max-width: 32px;
+    max-width: 22px;
     height: auto;
 
     /* padding-right: 12px;
     padding-top: 2px; */
   }
 
-  .header ul {
+  /* .header ul {
     margin: 0;
     padding: 0;
     list-style: none;
     background-color: var(--primary);
-  }
+  } */
   /* Links styling */
-  .header li a {
+  .menu-items {
     font-family: orbitron;
     font-weight: 400;
     font-style: normal;
     background-color: #f9f2f2;
     color: #1b72d0;
     display: block;
-    padding: 20px 20px;
+    /* padding: 32px 32px 8px; */
     text-decoration: none;
+    cursor: pointer;
   }
-  /* Menu styling */
-  .main_menu a:hover {
-    font-family: "josefin-sans", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #e34a6f;
+  .dropdown-menu {
+    display: none;
   }
 
-  .header .main_menu {
+  #sub_menu-btn:checked ~ .dropdown-menu {
+    display: block !important;
+  }
+  .dropdown-menu li a {
+    font-family: poppins;
+    font-weight: 300;
+    color: #000;
+    text-decoration: none;
+    /* padding: 0 32px; */
+  }
+
+  /* Menu styling */
+
+  .main_menu a:hover {
+    /* font-family: "josefin-sans", sans-serif;
+    font-weight: 600;
+    font-style: normal; */
+  }
+
+  /* .header .main_menu {
     clear: both;
+    display: none;
     max-height: 0;
     transition: max-height 0.2s ease-out;
-  }
+  } */
   /* Menu icon styling */
-
-  .header .icon_menu {
-    /* cursor: pointer; */
-    display: flex;
-    /* float: right; */
-    position: relative;
-    user-select: none;
-  }
 
   .navicon {
     background: black;
@@ -156,46 +176,50 @@
   }
 
   .header .icon_menu .navicon:before {
-    /* top: 5px; */
+    top: 5px;
   }
 
   .header .icon_menu .navicon:after {
-    /* top: -5px; */
+    top: -5px;
   }
 
   .header .menu-btn {
     display: none;
   }
 
-  .header .menu-btn:checked ~ .main_menu {
-    display: block;
+  #menu-btn:checked ~ .main_menu {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
     position: fixed; /* positionerer efter hele skærmen */
     width: 100vw; /* VW fordi det knytter sig til hele skærmstørrelsen */
     left: 0;
     top: 88px;
+    z-index: 9999;
+    row-gap: 24px;
   }
   /* funktion på de 3 streger til burgermenu */
 
-  .header .menu-btn:checked ~ .icon_menu .navicon {
+  #menu-btn:checked ~ .icon_menu .navicon {
     background: transparent;
   }
 
-  .header .menu-btn:checked ~ .icon_menu .navicon:before {
+  #menu-btn:checked ~ .icon_menu .navicon:before {
     transform: rotate(-45deg);
   }
 
-  .header .menu-btn:checked ~ .icon_menu .navicon:after {
+  #menu-btn:checked ~ .icon_menu .navicon:after {
     transform: rotate(45deg);
   }
 
-  .header .menu-btn:checked ~ .icon_menu:not(.steps) .navicon:before,
-  .header .menu-btn:checked ~ .icon_menu:not(.steps) .navicon:after {
+  #menu-btn:checked ~ .icon_menu:not(.steps) .navicon:before,
+  #menu-btn:checked ~ .icon_menu:not(.steps) .navicon:after {
     top: 0;
   }
 
   /* ---------------------------- MENU DESKTOP---------------------------- */
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     header {
       width: 100%;
       /* background-color: #f9f2f2; */
@@ -213,21 +237,21 @@
     }
 
     .icon_menu a img {
-      max-width: 20%;
-      height: auto;
-      display: inline-block;
+      /* max-width: 20%; */
+      /* height: auto; */
+      /* display: inline-block; */
       /* float: right; */
-      position: relative;
+      /* position: relative; */
     }
 
     nav img {
       max-width: 40%;
     }
 
-    a {
+    .dropdown-menu a {
       text-decoration: none;
       color: black;
-      font-family: orbitron;
+      font-family: poppins;
       font-weight: 600;
       font-style: normal;
       font-size: 1rem;
@@ -257,10 +281,9 @@
     .dropdown-menu {
       position: absolute;
       top: 100%; /* Lige under hovedmenuen */
-      left: 0;
+      left: -16px;
       /* background-color: #fff; */
       /* Baggrundsfarve */
-      border: 1px solid #ddd; /* Kant for dropdown */
       list-style: none;
       padding: 0;
       margin: 0;
@@ -269,8 +292,41 @@
       min-width: 150px; /* Minimum bredde */
     }
 
+    .main_menu,
+    #menu-btn:checked ~ .main_menu {
+      /* "unset" er ting der er i mobilversion som ikke skal bruges i desktop. Den skal ikke have  */
+      position: unset; /* positionerer efter hele skærmen - unset fjerne tidligere værdier */
+      width: unset;
+      left: unset;
+      top: unset;
+      flex-direction: unset;
+      z-index: unset;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-grow: 0.5;
+      order: 3;
+      background-color: unset;
+      padding: unset;
+    }
+
+    /* laver en boks som kan skubbe til tingene. order bestemmer hvor den skal sidde og dermed hvad den rykker på */
+    /* ´before´ laver pseudoelementet som bliver brugt til at skubbes rundt*/
+    nav::before {
+      content: ""; /* skal være der for at et before element virker */
+      display: block;
+      background-color: transparent; /* fik en farve så man kunne se den - gennemsigtig nu så man ikke kan se den men mellemrummet er der */
+      height: 32px; /* gjorde at man kunne se boksen når man rykkede rundt indtil det passede */
+      min-width: 28px; /* gjorde at man kunne se boksen når man rykkede rundt indtil det passede */
+      flex-grow: 1;
+      order: 1; /* bestemmer hvor pseudoelementet skal placeres - ændrer rækkefølgen */
+    }
     .dropdown-menu li {
       text-align: left;
+    }
+    .header li a {
+      background-color: transparent;
+      padding: 0;
     }
 
     .dropdown-menu a {
@@ -281,26 +337,25 @@
 
     .dropdown-menu a:hover {
       background-color: #f4f4f4; /* Hover-effekt */
-      color: #e34a6f;
+      /* color: #e34a6f; */
     }
 
     /* Vis dropdown ved hover */
     .main_menu .dropdown:hover .dropdown-menu {
-      display: block; /* Gør dropdown synlig */
-    }
-
-    .main_menu {
-      display: flex;
-      justify-content: space-between;
-      flex-grow: 2;
+      /* display: block;  */
+      /* Gør dropdown synlig */
     }
 
     .main_menu .dropdown:hover .dropdown-menu {
-      display: block;
+      display: flex;
       position: absolute;
       background-color: #f9f2f2;
+      font-family: poppins;
       z-index: 1000;
-      top: 58px;
+
+      padding: 16px;
+      flex-direction: column;
+      row-gap: 16px;
     }
     .main_menu .dropdown {
       position: relative;
