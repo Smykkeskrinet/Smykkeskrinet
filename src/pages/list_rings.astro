@@ -1,3 +1,5 @@
+
+
 ---
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
@@ -32,19 +34,19 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
   <body>
     <Navigation />
     <section class="grid2">
-      <div>
+      <div class="text">
     <h1>RINGE</h1>
-    <p>Smykkeskrinet forhandler et smukt udvalg af ringe fra anerkendte danske mærker. Vores udvalg rummer både klassiske og moderne designs, der passer til enhver stil og lejlighed. Fra tidløse solitaireringe til elegante statement-ringe – vi har noget, der fuldender dit look. Oplev vores nøje udvalgte sortiment og find den perfekte ring, der gør dit smykkeensemble komplet. </p>
+    <p>Hos Smykkeskrinet forhandler vi et nøje udvalgt sortiment af ringe fra nogle af Danmarks mest anerkendte smykkemærker. Vi sætter en ære i at tilbyde tidløse og moderne designs, der matcher enhver stil og lejlighed. Uanset om du er til minimalistisk elegance eller iøjnefaldende detaljer, finder du kvalitetsøreringe, der fuldender dit look. Gå på opdagelse i vores udvalg og find dit næste par favoritter! </p>
   </div>
     <div>
-      <img src="../img/koral2.webp" alt="hero" />
+      <img src="../img/earrings.webp" alt="hero" />
     </div>
   </section>
   <Filterbar />
     <main>
       {
         data.map((product) => {
-          return <Card {...product} />;
+          return <Card {product} />;
         })
       }
   
@@ -62,7 +64,6 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #F9F2F2;; /* Baggrundsfarve */
-  padding-left: 3rem;
 }
 
 img{
@@ -71,35 +72,64 @@ img{
 
 p{
   font-family: poppins;
-}
-
- main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
-  gap: 2x; /* Afstand mellem kortene */
-  padding: 5px; /* Indre afstand */
-}
-
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr; /* En enkelt kolonne på mindre skærme */
-    padding: 16px;
-  }
-
-  .grid2{
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: #F9F2F2;; /* Baggrundsfarve */
-  padding-left: 0rem;
-}
+  font-size: 15px;
 }
 
 h1 {
   font-family: Orbitron, sans-serif;
   color: #1b72d0;
   font-size: 50px;
+  line-height: 2;
+ 
+  
 
+}
+.text{
+  margin: 2rem;
+  max-width: 550px;
+  color: #3c3636;
+}
+
+
+ main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
+  gap: 2x; /* Afstand mellem kortene */
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr; /* En enkelt kolonne på mindre skærme */
+  }
+
+  .grid2{
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #F9F2F2;; /* Baggrundsfarve */
   
 }
 
+
+p{
+  font-family: poppins;
+  font-size: 14px;
+ 
+}
+
+h1 {
+  font-family: Orbitron, sans-serif;
+  color: #1b72d0;
+  font-size: 50px;
+  line-height: 2;
+  
+
+}
+
+.text{
+  margin: 1rem;
+  color: #3c3636;
+}
+}
+
 </style>
+
