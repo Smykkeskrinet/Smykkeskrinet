@@ -13,72 +13,55 @@
   <div class="desktop">
     <div>
     <h1>LIVE SALG</h1>
+   
   </div>
-    <div>
-      <p>Følg med på vores Facebook hvor vi holder live salg HVER onsdag kl. 14</p>
-    </div>
-    <div>
+  <div>
+    <p>Følg med på vores Facebook hvor vi holder LIVE-SALG HVER onsdag kl. 14</p>
+  </div>
       <div>
         <a href="">
-          <img src="../img/facebook_grey.svg" alt="facebook" class="facebook" />
-        </a>
-
-        <a href="">
+          <img src="../img/facebook_grey.svg" alt="facebook" />
           <p>Sæt en påmindelse her</p>
         </a>
       </div>
-    </div>
   </div>
 </section>
 
 <style>
   .livesalg {
     background-color: #f9f2f2;
-    margin-top: 3rem;
+    padding: 1.5rem;
   }
 
   h1 {
     font-size: 40px;
     text-align: center;
-    padding-bottom: 1rem;
-    padding-top: 4rem;
     font-family: orbitron;
     color: #1b72d0;
   }
 
   p {
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
-    padding: 0.5rem;
-    padding-bottom: 3rem;
     font-family: poppins, light;
     color: #3c3636;
   }
 
-  .facebook {
+  img {
     justify-content: center;
-    padding-top: 1.5rem;
-    padding-left: 12rem;
-    padding-bottom: 0.5rem;
-    width: 60%;
+    width: 40%;
   }
 
   @media (min-width: 700px) {
     .desktop {
-      display: flex;
+      display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
+  gap: 2x; /* Afstand mellem kortene */
+  padding: 5px; /* Indre afstand */
     }
-    .facebook_desktop {
-      width: 10%;
-    }
-    .p_desktop {
-      font-size: 20px;
-      max-width: 75ch;
-    }
+    
     h1 {
       font-size: 40px;
-      padding-bottom: 4rem;
-      padding-top: 4rem;
-      padding-left: 3rem;
     }
   }
 </style>
