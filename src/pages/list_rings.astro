@@ -58,79 +58,81 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
   </footer>
 </html>
 
+
 <style>
 
   
-.grid2{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #F9F2F2;; /* Baggrundsfarve */
-}
-
-img{
-  width: 100%;
-}
-
-p{
-  font-family: poppins;
-  font-size: 15px;
-}
-
-h1 {
-  font-family: Orbitron, sans-serif;
-  color: #1b72d0;
-  font-size: 50px;
-  line-height: 2;
- 
-  
-
-}
-.text{
-  margin: 2rem;
-  max-width: 550px;
-  color: #3c3636;
-}
-
-
- main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
-  gap: 2x; /* Afstand mellem kortene */
-}
-
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr; /* En enkelt kolonne på mindre skærme */
-  }
-
   .grid2{
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: #F9F2F2;; /* Baggrundsfarve */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #F9F2F2;; /* Baggrundsfarve */
+  }
   
-}
-
-
-p{
-  font-family: poppins;
-  font-size: 14px;
- 
-}
-
-h1 {
-  font-family: Orbitron, sans-serif;
-  color: #1b72d0;
-  font-size: 50px;
-  line-height: 2;
+  img{
+    width: 100%;
+  }
   
-
-}
-
-.text{
-  margin: 1rem;
-  color: #3c3636;
-}
-}
-
-</style>
-
+  p{
+    font-family: poppins;
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-family: Orbitron, sans-serif;
+    color: #1b72d0;
+    font-size: 50px;
+    line-height: 2;
+   
+    
+  
+  }
+  .text{
+    margin: 2rem;
+    max-width: 550px;
+    color: #3c3636;
+  }
+  
+  
+   main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
+    gap: 2px; /* Afstand mellem kortene */
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      display: grid;
+    grid-template-columns: 1fr 1fr; /* Responsivt antal kolonner */
+    width: 100%;
+    }
+  
+    .grid2{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #F9F2F2;; /* Baggrundsfarve */
+    
+  }
+  
+  p{
+    font-family: poppins;
+    font-size: 14px;
+   
+  }
+  
+  h1 {
+    font-family: Orbitron, sans-serif;
+    color: #1b72d0;
+    font-size: 50px;
+    line-height: 2;
+    
+  
+  }
+  
+  .text{
+    margin: 1rem;
+    color: #3c3636;
+  }
+  }
+  
+  </style>
+  
