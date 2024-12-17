@@ -44,22 +44,20 @@ const { produkt } = Astro.props;
     <img src="../img/gold_silver.svg" alt="hero" class="farver"/> 
   </div>
   <div>
-    <section class="purchaseBox">
+    <section class="size">
       <div>
         <label>Vælg en størrelse:</label>
       </div>
-      <div>
-          <form>
-              <select name="size">
-                  <option>US 4 / EU 47 (XXS)</option>
-                  <option>US 5 / EU 49 (XS)</option>
-                  <option>US 6 / EU 51 (S)</option>
-                  <option>US 7 / EU 44 (M)</option>
-                  <option>US 8 / EU 56 (L)</option>
-                  <option>US 9 / EU 59 (XL)</option>
-              </select>
-            </form>
-            </div>
+      <div class="dropdown-container">
+        <select id="size" name="size">
+          <option value="US4">US 4 / EU 47 (XXS)</option>
+          <option value="US5">US 5 / EU 49 (XS)</option>
+          <option value="US6">US 6 / EU 51 (S)</option>
+          <option value="US7">US 7 / EU 54 (M)</option>
+          <option value="US8">US 8 / EU 56 (L)</option>
+          <option value="US9">US 9 / EU 59 (XL)</option>
+        </select>
+      </div>
   </section>
   </div>
   <div>
@@ -94,13 +92,56 @@ main{
   background-color: #F9F2F2;
 }
 
-
-.purchaseBox {
-  color: #3c3636;
+.size{
   font-family: poppins;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
 }
+
+/* Container til dropdown */
+.dropdown-container {
+      position: relative;
+      width: 250px;
+    }
+
+    /* Dropdown-styling */
+    select {
+      width: 100%;
+      font-size: 16px; /* Størrelsen på teksten */
+      padding: 10px; /* Afstand inde i dropdown */
+      border: 1px solid color: #3c3636;;
+      border-radius: 4px;
+      appearance: none; /* Fjern standard-styling på dropdown */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+      background-color: #f9f5f5;
+    }
+
+    /* Pseudo-element for pil i højre side */
+    .dropdown-container::after {
+      content: '▲'; /* Pil i dropdown */
+      font-size: 10px;
+      color: #3c3636;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%) rotate(180deg); /* Vend pilen opad */
+      pointer-events: none; /* Sørg for, at pilen ikke interagerer */
+    }
+
+    /* Når dropdown er åbnet */
+    select:focus + .dropdown-container::after {
+      transform: translateY(-50%) rotate(0deg); /* Vend pilen nedad */
+    }
+
+    /* Styling af dropdown-optioner */
+    select option {
+      font-size: 14px;
+      padding: 10px;
+    }
+
 
 
 h1 {
