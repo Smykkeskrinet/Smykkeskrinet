@@ -34,12 +34,12 @@ const { produkt } = Astro.props;
     <main>
       <section class="content">
         <div>
-    <img src={produkt.billede} alt="billede" height="460" width="430" />
+    <img src={produkt.billede} alt="billede" height="460" width="430" class="produkt"/>
   </div>
-  <div>
+  <div class="text">
     <h1>{produkt.navn}</h1>
     <h2>{produkt.brand}</h2>
-    <h3 class="pris">{produkt.pris}</h3>
+    <h3 class="pris">{produkt.pris},-</h3>
     <div>
     <img src="../img/gold_silver.svg" alt="hero" class="farver"/> 
   </div>
@@ -72,12 +72,12 @@ const { produkt } = Astro.props;
 
 <section class="content">
   <div>
+    <img src="../img/koral2.webp" alt="hero" class="produkt"/> 
+  </div>
+  <div class="text">
     <h4>Beskrivelse</h4>
     <p>{produkt.beskrivelse}</p>
   </div>
-    <div>
-      <img src="../img/koral2.webp" alt="hero" /> 
-    </div>
   </section>
       
   </main>
@@ -92,9 +92,6 @@ main{
   background-color: #F9F2F2;
 }
 
-.content{
-  margin: 1rem;
-}
 
 .purchaseBox {
   color: #3c3636;
@@ -107,20 +104,16 @@ main{
 h1 {
   font-family: Orbitron, sans-serif;
   color: #1b72d0;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 1.5;
 }
 
 h2{
-  font-family: poppins;
-  color: #3c3636;
-  line-height: 1.5;
-}
-
-h4{
-  font-family: poppins;
-  color: #3c3636;
-  margin-top: 1rem;
+  font-size: 17px;
+    text-align: start;
+    font-weight:normal; /* Fremhæver navnet */
+    font-family: poppins;
+    color: #8a8989;
   
 }
 
@@ -128,21 +121,34 @@ h4{
   color: #1b72d0;
   font-family: Orbitron, sans-serif;
   line-height: 1.5;
+  font-size: 22px;
 }
 
 .option{
   font-family: poppins;
 }
 
+h4{
+  font-size: 20px;
+    text-align: start;
+    font-weight:bolder; /* Fremhæver navnet */
+    font-family: orbitron;
+    line-height: 3;
+    color: #007bff;
+}
 
-
-img{
+.produkt{
   width: 100%;
+  height: 100%;
 }
 
 .betalingsmetoder{
 width: 60%;
 
+}
+
+.text{
+  margin: 1rem;
 }
 
 .farver{
@@ -183,7 +189,6 @@ p{
   @media (min-width: 700px) {
 
     .content{
-  margin: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -197,6 +202,19 @@ p{
 
 .betalingsmetoder{
   width: 50%;
+}
+
+.text{
+  margin-left: 2rem;
+}
+
+h4{
+  font-size: 22px;
+    text-align: start;
+    font-weight:bolder; /* Fremhæver navnet */
+    font-family: orbitron;
+    line-height: 3;
+    color: #007bff;
 }
 
   }
