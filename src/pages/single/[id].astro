@@ -44,6 +44,25 @@ const { produkt } = Astro.props;
     <img src="../img/gold_silver.svg" alt="hero" class="farver"/> 
   </div>
   <div>
+    <section class="purchaseBox">
+      <div>
+        <label>Vælg en størrelse:</label>
+      </div>
+      <div>
+          <form>
+              <select name="size">
+                  <option>US 4 / EU 47 (XXS)</option>
+                  <option>US 5 / EU 49 (XS)</option>
+                  <option>US 6 / EU 51 (S)</option>
+                  <option>US 7 / EU 44 (M)</option>
+                  <option>US 8 / EU 56 (L)</option>
+                  <option>US 9 / EU 59 (XL)</option>
+              </select>
+            </form>
+            </div>
+  </section>
+  </div>
+  <div>
     <img src="../img/betalingsmetoder.svg" alt="hero" class="betalingsmetoder"/> 
   </div>
     <a class="se-mere">Læg i kurv</a>
@@ -77,6 +96,14 @@ main{
   margin: 1rem;
 }
 
+.purchaseBox {
+  color: #3c3636;
+  font-family: poppins;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
 h1 {
   font-family: Orbitron, sans-serif;
   color: #1b72d0;
@@ -103,12 +130,18 @@ h4{
   line-height: 1.5;
 }
 
+.option{
+  font-family: poppins;
+}
+
+
+
 img{
   width: 100%;
 }
 
 .betalingsmetoder{
-width: 80%;
+width: 60%;
 
 }
 
