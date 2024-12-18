@@ -8,43 +8,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
 </head>
 
-<section class="container">
-    <div>
-      <a href="list_earrings">
-        <h3>ØRERINGE</h3>
-        <img src="../img/earring4.webp" alt="hero" class="kategori" />
-      </a>
-    </div>
-    <div>
-      <a href="list_rings">
-        <h3>RINGE</h3>
-        <img src="../img/ringe4.webp" alt="hero" class="kategori" />
-      </a>
-    </div>
-    <div>
-      <a href="list_necklaces">
-        <h3>HALSKÆDER</h3>
-        <img src="../img/necklace1.webp" alt="hero" class="kategori" />
-      </a>
-    </div>
-    <div>
-      <a href="list_bracelets">
-        <h3>ARMBÅND</h3>
-        <img src="../img/bracelet.webp" alt="hero" class="kategori" />
-      </a>
-    </div>
+<section class="categoryContainer">
+  <a class="categoryItem" href="list_earrings">
+    <img src="../img/earring4.webp" alt="hero" />
+    <h3>ØRERINGE</h3>
+  </a>
+
+  <a class="categoryItem" href="list_rings">
+    <img src="../img/ringe4.webp" alt="hero" />
+    <h3>RINGE</h3>
+  </a>
+
+  <a class="categoryItem" href="list_necklaces">
+    <img src="../img/necklace1.webp" alt="hero" />
+    <h3>HALSKÆDER</h3>
+  </a>
+
+  <a class="categoryItem" href="list_bracelets">
+    <img src="../img/bracelet.webp" alt="hero" />
+    <h3>ARMBÅND</h3>
+  </a>
 </section>
 
 <style>
-  .kategori {
-    width: 100%;
-    transition: 0.3s, opacity 0.3s;
+  .categoryContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    row-gap: 20px;
   }
 
-  .kategori:hover {
-    width: 100%;
-    transition: 0.3s, opacity 0.3s;
-    opacity: 60%;
+  .categoryItem {
+    display: grid;
+    grid-column: 1/2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 32px 1fr 32px;
+    grid-template-areas: ". main .";
+  }
+
+  .categoryItem img {
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+
+  .categoryItem h3 {
+    grid-area: main;
+    text-align: center;
+    align-self: center;
   }
 
   h3 {
@@ -54,26 +64,27 @@
     font-size: 35px;
   }
 
-  a{
+  a {
     text-decoration: none;
   }
 
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-    background-color: #F9F2F2;
-  }
+  @media (min-width: 768px) {
+    .categoryContainer {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10%;
+      row-gap: 10%;
+      padding: 5%;
+    }
 
-img{
-  width: 100%;
-}
+    .categoryItem {
+      grid-column: unset;
+    }
 
-  @media (min-width: 700px) {
-    .container {
-      display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
-  gap: 2x; /* Afstand mellem kortene */
-  }
+    .categoryItem:hover img {
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+      z-index: -1;
+      transition: filter 0.3s;
+    }
   }
 </style>
