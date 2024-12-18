@@ -17,9 +17,7 @@
     <div class="text">
       <h1>TJENESTER</h1>
         <p>Hos os har du også mulighed for at få målt din ringstørrelse, få skudt huller i ørerne og få indgraveret dine smykker. Du kan se mere nedenfor</p>
-        <a  href="tjenester">
-          <img src="../img/Se_mere_normal.svg" alt="hero" class="knap" />
-        </a>
+        <div class="knap"><a href="list_earrings" class="se-mere">LÆS MERE</a></div>
     </div>
   </div>
 </section>
@@ -29,6 +27,30 @@
     margin: 0;
     padding: 0;
   }
+
+  .se-mere {
+   justify-items: center;
+    padding: 20px; /* Indre afstand */
+    background-color: #1b72d0; /* Hvid baggrund */
+    font-family: orbitron;
+    color: #F9F2F2; /* Sort tekstfarve */
+    font-size: 12px;
+    width: 300px;
+    text-decoration: none; /* Fjerner understregning */
+    font-weight: normal; /* Fremhævet tekst */
+    text-align: center; /* Centrerer teksten */
+    transition: background-color 0.3s, color 0.3s; /* Animation ved hover */
+  }
+
+  .se-mere:hover {
+    background-color: #1457A0; /* Hvid baggrund */
+    color: #F9F2F2; /* Hvid tekst ved hover */
+  }
+
+.knap{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
   .tjenester_desktop{
     display: grid;
@@ -69,14 +91,8 @@
     font-family: poppins;
   }
 
-  .knap {
-    transition: 0.2s ease;
-    width: 50%;
-  }
+  
 
-  .knap :hover {
-   content: url("../img/Se_mere_hover.svg");
-  }
 
 
   @media (min-width: 700px) {
@@ -109,14 +125,7 @@ p {
     font-family: poppins;
   }
 
-    .knap {
-    transition: 0.2s ease;
-    width: 30%;
-  }
-   
-  .knap :hover {
-   content: url("../img/Se_mere_hover.svg");
-  }
+
 
   }
 </style>
