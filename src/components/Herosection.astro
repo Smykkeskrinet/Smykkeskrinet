@@ -19,14 +19,39 @@
       </div>
 
       <div class="hero_content">
-        <h1>SMYKKESKRINET</h1>
-        <a href="list_earrings"><img src="../img/shopnu_normal.svg" alt="hero" class="shopnu_knap" /></a>
+        <div><h1>SMYKKESKRINET</h1></div>
+        <div class="knap"><a href="list_earrings" class="se-mere">SHOP NU</a></div>
       </div>
     </div>
   </main>
 </body>
 
 <style>
+
+.se-mere {
+   justify-items: center;
+    padding: 20px; /* Indre afstand */
+    background-color: #F9F2F2; /* Hvid baggrund */
+    font-family: orbitron;
+    color: #3c3636; /* Sort tekstfarve */
+    font-size: 15px;
+    width: 300px;
+   
+    text-decoration: none; /* Fjerner understregning */
+    font-weight: normal; /* Fremhævet tekst */
+    text-align: center; /* Centrerer teksten */
+    transition: background-color 0.3s, color 0.3s; /* Animation ved hover */
+  }
+
+  .se-mere:hover {
+    background-color: #007bff; /* Hvid baggrund */
+    color: #F9F2F2; /* Hvid tekst ved hover */
+  }
+
+.knap{
+  margin-top: 4rem;
+}
+
   /*Fjerner det ene billede i mobilversion */
   .img-hero1 {
     display: none;
@@ -63,10 +88,6 @@
     grid-row: 1/2;
   }
 
-  .shopnu_knap {
-    width: 30%;
-    margin-top: 16px;
-  }
 
   .img-hero1 {
     display: none;
@@ -107,9 +128,6 @@
       grid-row: 1/2;
     }
 
-    .shopnu_knap {
-      max-width: 160px;
-      margin-top: 50px;
-    }
+  
   }
 </style>
