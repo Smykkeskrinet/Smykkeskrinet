@@ -21,7 +21,3 @@ body {
   /* Sikrer at striber gentager sig lodret */
   background-repeat: repeat-y;
 }
-
-/*DESKTOP*/
-@media (min-width: 700px) {
-}

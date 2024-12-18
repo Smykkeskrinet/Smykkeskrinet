@@ -43,7 +43,7 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
           <br />
           <p>Gå på opdagelse i vores udvalg og find dit næste par favoritter!</p>
         </div>
-        <div>
+        <div class="header_img">
           <img src="../img/necklace1.webp" alt="hero" />
         </div>
       </section>
@@ -67,6 +67,9 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
     display: grid;
     grid-template-columns: 1fr 1fr; /* Responsivt antal kolonner */
     width: 100%;
+  }
+  .header_img img {
+    max-width: 100%;
   }
 
   .grid2 {
