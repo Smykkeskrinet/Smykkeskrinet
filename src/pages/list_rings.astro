@@ -64,21 +64,7 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
 </html>
 
 <style>
-  .prod_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Responsivt antal kolonner */
-    width: 100%;
-  }
-  .header_img img {
-    max-width: 100%;
-  }
-
-  .grid2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: #f9f2f2; /* Baggrundsfarve */
-  }
-
+ 
   p {
     font-family: poppins;
     font-size: 14px;
@@ -98,11 +84,7 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
 
   /*DESKTOP */
   @media (min-width: 768px) {
-    .grid2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background-color: #f9f2f2; /* Baggrundsfarve */
-    }
+   
 
     img {
       width: 100%;
@@ -125,10 +107,5 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
       color: #3c3636;
     }
 
-    .prod_section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
-      gap: 2px; /* Afstand mellem kortene */
-    }
   }
 </style>
