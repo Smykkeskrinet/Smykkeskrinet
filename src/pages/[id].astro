@@ -1,7 +1,7 @@
 ---
-import Navigation from "../../components/Navigation.astro";
-import Footer from "../../components/Footer.astro";
-import "../../styles/style.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/style.css";
 
 export async function getStaticPaths() {
   const url = "https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker";
@@ -76,11 +76,11 @@ const listPage = categoryMap[kategori] ?? "rings"; // Standard fallback til 'rin
             </form>
           </section>
           <div>
-            <img src="../../img/betalingsmetoder.svg" alt="Betalingsmetoder" class="betalingsmetoder" />
+            <img src="../img/betalingsmetoder.svg" alt="Betalingsmetoder" class="betalingsmetoder" />
           </div>
           <a class="se-mere">Læg i kurv</a>
           <div>
-           <img src="../../img/ønskesky.svg" alt="hero" class="ønskesky"/> 
+           <img src="../img/ønskesky.svg" alt="hero" class="ønskesky"/> 
           </div>
         </div>
       </section>
@@ -92,7 +92,7 @@ const listPage = categoryMap[kategori] ?? "rings"; // Standard fallback til 'rin
           <p>{produkt.beskrivelse}</p>
         </div>
         <div>
-          <img src="../../img/koral2.webp" alt="Ekstra billede" />
+          <img src="../img/koral2.webp" alt="Ekstra billede" />
         </div>
       </section>
     </main>
