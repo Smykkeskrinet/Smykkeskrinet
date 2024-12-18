@@ -10,8 +10,17 @@
   overflow-y: auto;
 }
 
+img {
+  width: 100%;
+}
+
 main {
   margin-top: 116px;
+}
+
+.SoMe {
+  background-color: #f9f2f2;
+  padding: 1rem;
 }
 
 body {
@@ -119,5 +128,15 @@ select option {
       minmax(300px, 1fr)
     ); /* Responsivt antal kolonner */
     gap: 2px; /* Afstand mellem kortene */
+  }
+
+  .ikoner {
+    width: 10%;
+  }
+
+  .grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
   }
 }
