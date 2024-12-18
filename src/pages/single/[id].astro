@@ -93,56 +93,6 @@ main{
   background-color: #F9F2F2;
 }
 
-.size{
-  font-family: poppins;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2rem;
-}
-
-/* Container til dropdown */
-.dropdown-container {
-      position: relative;
-      width: 250px;
-    }
-
-    /* Dropdown-styling */
-    select {
-      width: 100%;
-      font-size: 16px; /* Størrelsen på teksten */
-      padding: 10px; /* Afstand inde i dropdown */
-      border: 1px solid color: #3c3636;;
-      border-radius: 4px;
-      appearance: none; /* Fjern standard-styling på dropdown */
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      cursor: pointer;
-      background-color: #f9f5f5;
-    }
-
-    /* Pseudo-element for pil i højre side */
-    .dropdown-container::after {
-      content: '▲'; /* Pil i dropdown */
-      font-size: 10px;
-      color: #3c3636;
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%) rotate(180deg); /* Vend pilen opad */
-      pointer-events: none; /* Sørg for, at pilen ikke interagerer */
-    }
-
-    /* Når dropdown er åbnet */
-    select:focus + .dropdown-container::after {
-      transform: translateY(-50%) rotate(0deg); /* Vend pilen nedad */
-    }
-
-    /* Styling af dropdown-optioner */
-    select option {
-      font-size: 14px;
-      padding: 10px;
-    }
-
 
 
 h1 {

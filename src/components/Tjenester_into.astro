@@ -36,7 +36,7 @@
       <h1>BOOK DIN TID HER</h1>
       <section class="size">
         <div>
-          <label>Vælg en størrelse:</label>
+          <label>Vælg en tjeneste:</label>
         </div>
         <div class="dropdown-container">
           <select id="size" name="size">
@@ -69,88 +69,6 @@
   <style>
 
 
-.size{
-  font-family: poppins;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2rem;
-      color:#F9F2F2;
-}
-
-/* Container til dropdown */
-.dropdown-container {
-      position: relative;
-      width: 250px;
-    }
-
-    /* Dropdown-styling */
-    select {
-      width: 100%;
-      font-size: 16px; /* Størrelsen på teksten */
-      padding: 10px; /* Afstand inde i dropdown */
-      border: 1px solid color: #3c3636;;
-      border-radius: 4px;
-      appearance: none; /* Fjern standard-styling på dropdown */
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      cursor: pointer;
-      background-color: #3c3636;
-      color:#F9F2F2;
-    }
-
-    /* Pseudo-element for pil i højre side */
-    .dropdown-container::after {
-      content: '▲'; /* Pil i dropdown */
-      font-size: 10px;
-      color: #F9F2F2;
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%) rotate(180deg); /* Vend pilen opad */
-      pointer-events: none; /* Sørg for, at pilen ikke interagerer */
-    }
-
-    /* Når dropdown er åbnet */
-    select:focus + .dropdown-container::after {
-      transform: translateY(-50%) rotate(0deg); /* Vend pilen nedad */
-    }
-
-    /* Styling af dropdown-optioner */
-    select option {
-      font-size: 14px;
-      padding: 10px;
-      color:#F9F2F2;
-    }
-
-.book{
-  background-color: #3c3636;
-  padding: 1rem;
-}
-
-.tid_titel{
-  color: #f9f2f2;
-  margin-top: 2rem;
-}
-
-.tid{
-  font-size: 20px;
-  font-family: orbitron;
-  background-color: #3c3636;
-  color: #f9f2f2;
-  padding: 5px;
-  border: 1px solid #f9f2f2; /* 2px solid black border */
-  text-decoration: none;
-}
-
-.tid :hover{
-  font-size: 20px;
-  font-family: orbitron;
-  background-color: #f9f2f2;
-  color: #3c3636;
-  padding: 5px;
-  border: 1px solid #f9f2f2; /* 2px solid black border */
-  text-decoration: none;
-}
 
 .livesalg {
       background-color: #f9f2f2;
@@ -164,6 +82,30 @@
       padding: 1rem;
     }
 
+    .tid_titel {
+  color: #f9f2f2;
+  margin-top: 2rem;
+}
+
+.tid {
+  font-size: 20px;
+  font-family: orbitron;
+  background-color: #3c3636;
+  color: #f9f2f2;
+  padding: 5px;
+  border: 1px solid #f9f2f2; /* 2px solid black border */
+  text-decoration: none;
+}
+
+.tid :hover {
+  font-size: 20px;
+  font-family: orbitron;
+  background-color: #f9f2f2;
+  color: #3c3636;
+  padding: 5px;
+  border: 1px solid #f9f2f2; /* 2px solid black border */
+  text-decoration: none;
+}
     h1 {
       font-size: 40px;
       text-align: center;
@@ -174,7 +116,10 @@
     
     }
 
-
+    .book {
+  background-color: #3c3636;
+  padding: 1rem;
+}
     h2 {
       font-size: 30px;
       padding-top: 2rem;

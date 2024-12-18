@@ -22,12 +22,6 @@ body {
   background-repeat: repeat-y;
 }
 
-.grid2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: #f9f2f2; /* Baggrundsfarve */
-}
-
 .se-mere {
   justify-content: center;
   padding: 20px; /* Indre afstand */
@@ -64,6 +58,59 @@ body {
   max-width: 100%;
 }
 
+.size {
+  font-family: poppins;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  color: #f9f2f2;
+}
+
+/* Container til dropdown */
+.dropdown-container {
+  position: relative;
+  width: 250px;
+}
+
+/* Dropdown-styling */
+select {
+  width: 100%;
+  font-size: 16px; /* Størrelsen på teksten */
+  padding: 10px; /* Afstand inde i dropdown */
+  border: 1px solid color #3c3636;
+  border-radius: 4px;
+  appearance: none; /* Fjern standard-styling på dropdown */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-color: #3c3636;
+  color: #f9f2f2;
+}
+
+/* Pseudo-element for pil i højre side */
+.dropdown-container::after {
+  content: "▲"; /* Pil i dropdown */
+  font-size: 10px;
+  color: #f9f2f2;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%) rotate(180deg); /* Vend pilen opad */
+  pointer-events: none; /* Sørg for, at pilen ikke interagerer */
+}
+
+/* Når dropdown er åbnet */
+select:focus + .dropdown-container::after {
+  transform: translateY(-50%) rotate(0deg); /* Vend pilen nedad */
+}
+
+/* Styling af dropdown-optioner */
+select option {
+  font-size: 14px;
+  padding: 10px;
+  color: #f9f2f2;
+}
+
 @media (min-width: 768px) {
   .prod_section {
     display: grid;
@@ -72,11 +119,5 @@ body {
       minmax(300px, 1fr)
     ); /* Responsivt antal kolonner */
     gap: 2px; /* Afstand mellem kortene */
-  }
-
-  .grid2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #f9f2f2; /* Baggrundsfarve */
   }
 }
