@@ -3,7 +3,6 @@ import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import "../../styles/style.css";
 
-//https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker
 export async function getStaticPaths() {
   const url = "https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykker";
   const options = {
@@ -16,10 +15,26 @@ export async function getStaticPaths() {
 
   return data.map((produkt) => ({
     params: { id: produkt.id },
-    props: { produkt }, // send al data med som props
+    props: { produkt, listPage: produkt.kategori }, // Send 'kategori' som listPage
   }));
 }
+
+
 const { produkt } = Astro.props;
+
+// Oversæt produktkategori til korrekt liste-side
+const kategori = produkt.kategori?.toLowerCase().trim(); // Sikrer ensartethed
+console.log("Kategori fra produkt:", kategori); // Debugging
+
+const categoryMap = {
+  ring: "rings",
+  earring: "earrings",
+  bracelet: "bracelets",
+  necklace: "necklaces",
+};
+
+// Fallback, hvis kategori er ugyldig eller tom
+const listPage = categoryMap[kategori] ?? "rings"; // Standard fallback til 'rings'
 ---
 
 <html lang="en">
@@ -27,91 +42,75 @@ const { produkt } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
-    <title>Smykkeskrinet - Smykke</title>
+    <title>{produkt.navn} | Smykker</title>
   </head>
   <body>
     <Navigation />
     <main>
+      <a class="se-mere" href={`/list_${listPage}`}>← Tilbage</a>
       <section class="content">
+        <!-- Produktbillede -->
         <div>
-    <img src={produkt.billede} alt="billede" height="460" width="430" class="produkt"/>
-  </div>
-  <div class="text">
-    <h1>{produkt.navn}</h1>
-    <h2>{produkt.brand}</h2>
-    <h3 class="pris">{produkt.pris},-</h3>
-    <div>
-    <img src="../img/gold_silver.svg" alt="hero" class="farver"/> 
-  </div>
-  <div>
-    <section class="size">
-      <div>
-        <label>Vælg en størrelse:</label>
-      </div>
-      <div class="dropdown-container">
-        <select id="size" name="size">
-          <option value="US4">US 4 / EU 47 (XXS)</option>
-          <option value="US5">US 5 / EU 49 (XS)</option>
-          <option value="US6">US 6 / EU 51 (S)</option>
-          <option value="US7">US 7 / EU 54 (M)</option>
-          <option value="US8">US 8 / EU 56 (L)</option>
-          <option value="US9">US 9 / EU 59 (XL)</option>
-        </select>
-      </div>
-  </section>
-  </div>
-  <div>
-    <img src="../img/betalingsmetoder.svg" alt="hero" class="betalingsmetoder"/> 
-  </div>
-    <a class="se-mere">Læg i kurv</a>
-    <img src="../img/ønskesky.svg" alt="hero" class="ønskesky"/> 
- 
-  </div>
-  
-</section>
+          <img src={produkt.billede} alt="Produkt billede" height="460" width="430" />
+        </div>
+        <!-- Produktinformation -->
+        <div class="text">
+          <h1>{produkt.navn}</h1>
+          <h2>{produkt.brand}</h2>
+          <h3 class="pris">{produkt.pris} DKK</h3>
+          <div>
+            <img src="../img/gold_silver.svg" alt="Farvevalg" class="farver" />
+          </div>
+          <!-- Størrelsesvælger -->
+          <section class="purchaseBox">
+            <label>Vælg en størrelse:</label>
+            <form>
+              <select name="size">
+                <option>US 4 / EU 47 (XXS)</option>
+                <option>US 5 / EU 49 (XS)</option>
+                <option>US 6 / EU 51 (S)</option>
+                <option>US 7 / EU 54 (M)</option>
+                <option>US 8 / EU 56 (L)</option>
+                <option>US 9 / EU 59 (XL)</option>
+              </select>
+            </form>
+          </section>
+          <div>
+            <img src="../img/betalingsmetoder.svg" alt="Betalingsmetoder" class="betalingsmetoder" />
+          </div>
+          <a class="se-mere">Læg i kurv</a>
+        </div>
+         <!-- <div>
+          <img src="../img/ønskesky.svg" alt="hero" class="ønskesky"/> 
+         </div> -->
+      </section>
 
-<section class="content">
-  <div>
-    <img src="../img/koral2.webp" alt="hero" class="produkt"/> 
-  </div>
-  <div class="text">
-    <h4>Beskrivelse</h4>
-    <p>{produkt.beskrivelse}</p>
-  </div>
-  </section>
-      
-  </main>
-      <Footer />
-    
+      <!-- Beskrivelse og ekstra billede -->
+      <section class="content">
+        <div class="text">
+          <h4>Beskrivelse</h4>
+          <p>{produkt.beskrivelse}</p>
+        </div>
+        <div>
+          <img src="../img/koral2.webp" alt="Ekstra billede" />
+        </div>
+      </section>
+    </main>
+    <Footer />
   </body>
 </html>
 
 <style>
-
-main{
-  background-color: #F9F2F2;
-}
-
-.tilbage-pil {
-  display: inline-block;
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  font-family: poppins, sans-serif;
-  font-size: 14px;
-  color: #1b72d0;
-  text-decoration: none;
+main {
   background-color: #f9f2f2;
-  border-radius: 5px;
-  transition: all 0.3s ease;
 }
 
-.tilbage-pil:hover {
-  background-color: #1b72d0;
-  color: #f9f2f2;
+.purchaseBox {
+  color: #3c3636;
+  font-family: poppins;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
-
-
 h1 {
   font-family: Orbitron, sans-serif;
   color: #1b72d0;
@@ -171,7 +170,7 @@ width: 60%;
 .farver{
   width: 30%;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
 }
 
@@ -202,6 +201,11 @@ p{
     background-color: #1457A0; /* Blå baggrund ved hover */
     color: #F9F2F2; /* Hvid tekst ved hover */
   }
+
+img{
+  width: 100%;
+  height: 100%;
+}
 
   @media (min-width: 700px) {
 
