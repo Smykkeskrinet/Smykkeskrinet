@@ -14,16 +14,20 @@ export async function getStaticPaths() {
   const data = await fetch(url, options).then((res) => res.json());
 
   return data.map((produkt) => ({
-    params: { id: produkt.id },
-    props: { produkt, listPage: produkt.kategori }, // Send 'kategori' som listPage
+    params: { id: produkt.id.toString() }, // ID som parameter
+    props: { 
+      produkt, 
+      listPage: produkt.produkt // Bruger 'produkt'-kolonnen som listPage
+    },
   }));
 }
+
 
 
 const { produkt } = Astro.props;
 
 // Oversæt produktkategori til korrekt liste-side
-const kategori = produkt.kategori?.toLowerCase().trim(); // Sikrer ensartethed
+const kategori = produkt.produkt?.toLowerCase().trim(); // Bruger 'produkt'-kolonnen
 console.log("Kategori fra produkt:", kategori); // Debugging
 
 const categoryMap = {
@@ -35,6 +39,7 @@ const categoryMap = {
 
 // Fallback, hvis kategori er ugyldig eller tom
 const listPage = categoryMap[kategori] ?? "rings"; // Standard fallback til 'rings'
+
 ---
 
 <html lang="en">
@@ -48,7 +53,8 @@ const listPage = categoryMap[kategori] ?? "rings"; // Standard fallback til 'rin
   <body>
     <Navigation />
     <main>
-      <a class="se-mere" href={`/list_${listPage}`}>← Tilbage</a>
+      <a class="se-mere" href={`/list_${listPage}`}>← Tilbage til oversigten</a>
+
       <section class="content">
         <!-- Produktbillede -->
         <div>
