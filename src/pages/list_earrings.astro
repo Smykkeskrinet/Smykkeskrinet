@@ -19,7 +19,6 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
-
 </head>
 
 <html lang="en">
@@ -32,106 +31,103 @@ const data = await fetch(`https://uzaqfwgbruvllvdlpabq.supabase.co/rest/v1/Smykk
     <title>Smykkeskrinet - Ørerringe</title>
   </head>
   <body>
-    <Navigation />
-    <section class="grid2">
-      <div class="text">
-    <h1>ØRERINGE</h1>
-    <p>Se vores udvalg af øreringe fra nogle af Danmarks mest anerkendte smykkemærker. </p>
-    <br>
-     <p> Gå på opdagelse i vores udvalg og find dit næste par favoritter! </p>
-  </div>
-    <div>
-      <img src="../img/earrings.webp" alt="hero" />
-    </div>
-  </section>
-  <Filterbar />
+    <header>
+      <Navigation />
+    </header>
     <main>
-      {
-        data.map((product) => {
-          return <Card {product} />;
-        })
-      }
-  
+      <section class="grid2">
+        <div class="text">
+          <h1>ØRERINGE</h1>
+          <p>Se vores udvalg af øreringe fra nogle af Danmarks mest anerkendte smykkemærker.</p>
+          <br />
+          <p>Gå på opdagelse i vores udvalg og find dit næste par favoritter!</p>
+        </div>
+        <div class="header_img">
+          <img src="../img/earrings.webp" alt="hero" />
+        </div>
+      </section>
+      <Filterbar />
+
+      <div class="prod_section">
+        {
+          data.map((product) => {
+            return <Card {product} />;
+          })
+        }
+      </div>
     </main>
+    <footer>
+      <Footer />
+    </footer>
   </body>
-  <footer>
-    <Footer />
-  </footer>
 </html>
 
 <style>
-
-  
-.grid2{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #F9F2F2;; /* Baggrundsfarve */
-}
-
-img{
-  width: 100%;
-}
-
-p{
-  font-family: poppins;
-  font-size: 15px;
-}
-
-h1 {
-  font-family: Orbitron, sans-serif;
-  color: #1b72d0;
-  font-size: 50px;
-  line-height: 2;
- 
-  
-
-}
-.text{
-  margin: 2rem;
-  max-width: 550px;
-  color: #3c3636;
-}
-
-
- main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
-  gap: 2px; /* Afstand mellem kortene */
-}
-
-@media (max-width: 768px) {
-  main {
+  .prod_section {
     display: grid;
-  grid-template-columns: 1fr 1fr; /* Responsivt antal kolonner */
-  width: 100%;
+    grid-template-columns: 1fr 1fr; /* Responsivt antal kolonner */
+    width: 100%;
   }
 
-  .grid2{
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: #F9F2F2;; /* Baggrundsfarve */
-  
-}
+  .header_img img {
+    max-width: 100%;
+  }
 
-p{
-  font-family: poppins;
-  font-size: 14px;
- 
-}
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #f9f2f2; /* Baggrundsfarve */
+  }
 
-h1 {
-  font-family: Orbitron, sans-serif;
-  color: #1b72d0;
-  font-size: 50px;
-  line-height: 2;
-  
+  p {
+    font-family: poppins;
+    font-size: 14px;
+  }
 
-}
+  h1 {
+    font-family: Orbitron, sans-serif;
+    color: #1b72d0;
+    font-size: 50px;
+    line-height: 2;
+  }
 
-.text{
-  margin: 1rem;
-  color: #3c3636;
-}
-}
+  .text {
+    margin: 1rem;
+    color: #3c3636;
+  }
 
+  @media (min-width: 768px) {
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: #f9f2f2; /* Baggrundsfarve */
+    }
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      font-family: poppins;
+      font-size: 15px;
+    }
+
+    h1 {
+      font-family: Orbitron, sans-serif;
+      color: #1b72d0;
+      font-size: 50px;
+      line-height: 2;
+    }
+    .text {
+      margin: 2rem;
+      max-width: 550px;
+      color: #3c3636;
+    }
+
+    .prod_section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivt antal kolonner */
+      gap: 2px; /* Afstand mellem kortene */
+    }
+  }
 </style>
