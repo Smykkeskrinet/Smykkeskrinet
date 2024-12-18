@@ -21,3 +21,30 @@ body {
   /* Sikrer at striber gentager sig lodret */
   background-repeat: repeat-y;
 }
+
+.se-mere {
+  justify-content: center;
+  padding: 20px; /* Indre afstand */
+  background-color: #1b72d0; /* Hvid baggrund */
+  font-family: orbitron;
+  color: #f9f2f2; /* Sort tekstfarve */
+  font-size: 12px;
+  width: 250px;
+  text-decoration: none; /* Fjerner understregning */
+  font-weight: normal; /* Fremhævet tekst */
+  text-align: center; /* Centrerer teksten */
+  transition: background-color 0.3s, color 0.3s; /* Animation ved hover */
+}
+
+.se-mere:hover {
+  background-color: #1457a0; /* Hvid baggrund */
+  color: #f9f2f2; /* Hvid tekst ved hover */
+}
+
+.se_mere_knap {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex; /* Aktiverer Flexbox */
+  justify-content: center; /* Centrerer horisontalt */
+  align-items: center; /* Centrerer vertikalt */
+}
