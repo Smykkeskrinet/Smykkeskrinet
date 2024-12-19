@@ -46,8 +46,6 @@ import "../styles/style.css";
           <h2>SMYKKESKRINET</h2>
         </div>
         <img src="../../img/personalet.webp" alt="hero" />
-        <!-- Lottie animation -->
-        <div id="logo-animation" class="lottie-logo"></div>
       </div>
     </div>
   </footer>
@@ -108,16 +106,6 @@ import "../styles/style.css";
     width: 100%;
   }
 
-  .lottie-logo {
-    width: 150px; /* Justér bredde */
-    height: 150px; /* Justér højde */
-    margin: auto;
-  }
-
-  .lottie-logo {
-  width: 150px;
-  height: 150px;
-}
 
 
   /* DESKTOP */
@@ -127,10 +115,6 @@ import "../styles/style.css";
       grid-template-columns: 1fr 1fr;
     }
 
-    .lottie-logo {
-  width: 150px;
-  height: 150px;
-}
 
     img {
       width: 100%;
@@ -164,13 +148,4 @@ import "../styles/style.css";
   }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
-<script>
-  lottie.loadAnimation({
-    container: document.getElementById('logo-animation'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: '../../logoroto.json', 
-  });
-</script>
+
