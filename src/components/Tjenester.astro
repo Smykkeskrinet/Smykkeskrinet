@@ -9,123 +9,100 @@
 </head>
 
 <section class="tjenester">
-  <div class="tjenester_desktop">
-    <div>
-      <img src="../img/piercing.webp" alt="hero" />
-    </div>
-    
-    <div class="text">
-      <h1>TJENESTER</h1>
-        <p>Hos os har du også mulighed for at få målt din ringstørrelse, få skudt huller i ørerne og få indgraveret dine smykker. Du kan se mere nedenfor</p>
-        <div class="knap"><a href="list_earrings" class="se-mere">LÆS MERE</a></div>
-    </div>
+  <img src="../img/piercingai.jpg" alt="hero" />
+
+  <div class="text">
+    <h1>TJENESTER</h1>
+    <p>Hos os har du også mulighed for at få målt din ringstørrelse, få skudt huller i ørerne og få indgraveret dine smykker. Du kan se mere nedenfor</p>
+    <div class="knap"><a href="list_earrings" class="se-mere">LÆS MERE</a></div>
   </div>
 </section>
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
+  .tjenester {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f2f2;
+    margin-bottom: 20%;
+    align-items: center;
+    padding: 40px;
   }
 
+  .tjenester .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tjenester img {
+    max-width: calc(50%-20px);
+    border-radius: 35%;
+  }
   .se-mere {
-   justify-items: center;
+    justify-items: center;
     padding: 20px; /* Indre afstand */
     background-color: #1b72d0; /* Hvid baggrund */
     font-family: orbitron;
-    color: #F9F2F2; /* Sort tekstfarve */
+    color: #f9f2f2; /* Sort tekstfarve */
     font-size: 12px;
     width: 300px;
     text-decoration: none; /* Fjerner understregning */
     font-weight: normal; /* Fremhævet tekst */
     text-align: center; /* Centrerer teksten */
-    transition: background-color 0.3s, color 0.3s; /* Animation ved hover */
+    transition:
+      background-color 0.3s,
+      color 0.3s; /* Animation ved hover */
   }
 
   .se-mere:hover {
-    background-color: #1457A0; /* Hvid baggrund */
-    color: #F9F2F2; /* Hvid tekst ved hover */
+    background-color: #1457a0; /* Hvid baggrund */
+    color: #f9f2f2; /* Hvid tekst ved hover */
   }
 
-.knap{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-  .tjenester_desktop{
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .tjenester {
-    background-color: #f9f2f2;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    align-items: center; /* Centrerer alle elementer vandret */
-    justify-content: center; /* Centrerer alle elementer lodret */
-    text-align: center; /* Sørg for at alt er centreret */
+  .knap {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   h1 {
     font-size: 50px;
-    text-align: center;
     margin: 0;
     font-family: orbitron;
     color: #1b72d0;
   }
 
-  img {
-    width: 70%;
-    height: auto;
-    padding: 1rem;
+  .text {
+    margin: 1rem;
   }
 
-  .text{
-    margin: 1rem
-  }
-
-  p {
+  .tjenester .text p {
     font-size: 14px;
-    text-align: center;
     color: #3c3636;
     font-family: poppins;
+    text-align: center;
+    max-width: 60ch;
   }
 
-  
-
-
-
-  @media (min-width: 700px) {
+  @media (min-width: 768px) {
     .tjenester {
+      flex-direction: row;
+      background-color: transparent;
+      column-gap: 30px;
+      padding: 20px;
+    }
+
+    .tjenester .text {
+      align-items: start;
       background-color: #f9f2f2;
-    }
-    .tjenester_desktop {
-      display: grid; /* Gør containeren fleksibel, så børnene kan placeres side om side */
-      grid-template-columns: 1fr 1fr;
-
+      padding-left: 10px;
+      max-width: 47%;
     }
 
-.text{
-  text-align: left;
-}
-
-h1 {
-    font-size: 50px;
-    text-align: left;
-    padding-bottom: 2rem;
-    margin: 0;
-    font-family: orbitron;
-    color: #1b72d0;
-  }
-
-p {
-    font-size: 14px;
-    text-align: left;
-    color: #3c3636;
-    font-family: poppins;
-  }
-
-
-
+    .tjenester img {
+      max-width: 47%;
+    }
+    .tjenester .text p {
+      text-align: left;
+    }
   }
 </style>
