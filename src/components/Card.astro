@@ -1,5 +1,5 @@
 ---
-const {product } = Astro.props;
+const { product } = Astro.props;
 // console.log(data);
 ---
 
@@ -30,6 +30,9 @@ const {product } = Astro.props;
     height: auto; /* Bevarer billedets proportioner */
   }
 
+  img {
+    padding: 20px;
+  }
   article div {
     padding: 16px; /* Indrykning indenfor boksen */
   }
@@ -45,7 +48,7 @@ const {product } = Astro.props;
   article h4 {
     font-size: 14px;
     text-align: start;
-    font-weight:normal; /* Fremhæver navnet */
+    font-weight: normal; /* Fremhæver navnet */
     font-family: poppins;
     color: #8a8989;
   }
@@ -66,20 +69,22 @@ const {product } = Astro.props;
     display: block; /* Gør knappen til en blok */
     width: 100%; /* Fylder hele bredden */
     padding: 12px 0; /* Indre afstand */
-    background-color: #F9F2F2; /* Hvid baggrund */
+    background-color: #f9f2f2; /* Hvid baggrund */
     font-family: orbitron;
-    color: #3C3636; /* Sort tekstfarve */
+    color: #3c3636; /* Sort tekstfarve */
     font-size: 13px;
     text-decoration: none; /* Fjerner understregning */
-    border-top: 1px solid #3C3636; /* Skillelinje over knappen */
+    border-top: 1px solid #3c3636; /* Skillelinje over knappen */
     font-weight: bold; /* Fremhævet tekst */
     text-align: center; /* Centrerer teksten */
-    transition: background-color 0.3s, color 0.3s; /* Animation ved hover */
+    transition:
+      background-color 0.3s,
+      color 0.3s; /* Animation ved hover */
   }
 
   .se-mere:hover {
     background-color: #007bff; /* Blå baggrund ved hover */
-    color: #F9F2F2; /* Hvid tekst ved hover */
+    color: #f9f2f2; /* Hvid tekst ved hover */
   }
 
   @media screen and (max-width: 768px) {
@@ -88,12 +93,11 @@ const {product } = Astro.props;
     }
 
     article {
-    /* width: 300px;  */
-    margin: 0.5rem;
-    border: 1px solid #3c3636; /* Tynder grænse */
-    overflow: hidden; /* Skjuler overløb */
-    background-color: #f9f9f9; /* Baggrundsfarve */
-  }
+      /* width: 300px;  */
+      margin: 0.5rem;
+      border: 1px solid #3c3636; /* Tynder grænse */
+      overflow: hidden; /* Skjuler overløb */
+      background-color: #f9f9f9; /* Baggrundsfarve */
+    }
   }
 </style>
-
